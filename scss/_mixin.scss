@@ -1,0 +1,19 @@
+@mixin clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin ir {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  vertical-align: middle;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  position: absolute;
+}

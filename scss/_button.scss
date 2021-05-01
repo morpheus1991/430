@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+}
+.btn-md {
+  height: 60px;
+  line-height: 60px;
+  width: 195px;
+  max-width: 100%;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+
+.btn-white {
+  background: #fff !important;
+  color: #0055b8 !important;
+}
+
+.bg-light-gray,
+.bg-white {
+  .btn {
+    background: #0055b8 !important;
+    color: #fff !important;
+  }
+}
+.bg-darkblue {
+  .btn {
+    background: #fff !important;
+    color: #0055b8 !important;
+  }
+}

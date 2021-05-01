@@ -1,0 +1,27 @@
+{
+  // 코딩 컨벤션 기본 설정
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  // SCSS
+  "[scss]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true
+  },
+  "liveSassCompile.settings.includeItems": ["scss/style.scss"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../assets/css/"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+//   "liveServer.settings.port": 3772,
+//   "liveServer.settings.host": "192.168.219.103" // 본인 IP로 변경 사용
+}

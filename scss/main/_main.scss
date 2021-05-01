@@ -1,0 +1,123 @@
+.main-message-section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  min-height: 800px;
+
+  .text-area {
+    .main-title {
+      text-align: center;
+      font-size: 38px;
+      & + .main-text {
+        font-size: 22px;
+        line-height: 30px;
+        padding-top: 30px;
+      }
+    }
+    .main-text {
+      text-align: center;
+      & + .button-area {
+        margin-top: 60px;
+        .btn {
+          color: #fff;
+        }
+      }
+    }
+    .button-area {
+      text-align: center;
+      .btn {
+        color: #fff;
+      }
+    }
+    & + .image-area {
+      margin-top: 60px;
+    }
+    & + .button-area {
+      margin-top: 40px;
+    }
+  }
+  .image-area {
+    display: flex;
+    justify-content: center;
+    .img {
+      width: 400px;
+      height: 500px;
+      background: url(../../assets/images/main-bg2.jpg) no-repeat center/cover;
+    }
+    & + .text-area {
+      margin-top: 60px;
+    }
+  }
+  &.wide {
+    display: flex;
+    align-items: center;
+
+    .image-area {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    .text-area {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-left: 5%;
+      .main-title,
+      .main-text {
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.sticki-scroll {
+  display: flex;
+  .image-area {
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 50%;
+    background: url(../../assets/images/main-bg2.jpg);
+    height: 100vh;
+    // align-items: flex-start;
+    .img {
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      top: 0;
+    }
+  }
+
+  .text-area {
+    width: 50%;
+    color: #fff;
+    padding: 200px 0;
+    background: #000c24;
+    position: relative;
+
+    .text-scroll-area {
+      height: 200vh;
+      padding: 100px 0;
+      .sticki-text-block {
+        padding: 200px;
+      }
+    }
+  }
+  .scroll-percent-gauge {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+
+    .scroll-percent {
+      height: 0%;
+      display: block;
+      width: 2px;
+      background: #fff;
+      transition: 0.5s;
+    }
+  }
+}
