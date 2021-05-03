@@ -1,5 +1,6 @@
 header {
   z-index: 1;
+  $stateBarHeight: 4px;
   .scroll-gauge-area {
     width: 100%;
     position: fixed;
@@ -9,17 +10,42 @@ header {
     .scroll-gauge-bar {
       background: #c7e2ff;
       width: 20px;
-      height: 4px;
+      height: $stateBarHeight;
     }
   }
   .outer-container {
     border-bottom: 1px solid #f2f2f2;
-
+    &.state-area {
+      padding-top: $stateBarHeight;
+      height: 40px;
+      background: #003876;
+      align-items: center;
+      .state-list {
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+        width: 100%;
+        .state-item {
+          height: 39px - $stateBarHeight;
+          background: #002b5c;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+          color: #fff;
+          box-shadow: 0 3px 0 #ffc240;
+          & + .state-item {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
     .inner-container {
       display: flex;
       .gnb-area {
         display: flex;
         align-items: center;
+        flex-grow: 1;
+
         .logo-area {
           display: flex;
           align-items: center;
@@ -28,7 +54,6 @@ header {
             display: flex;
             align-items: center;
             height: 40px;
-            background: red;
           }
           & + .btn-gnb-controll-area {
             & + .menu-area {
@@ -48,15 +73,18 @@ header {
 
         .menu-area {
           display: flex;
+          flex-grow: 1;
+          justify-content: center;
           .menu-depth-1-list {
             display: flex;
             .menu-depth-1 {
               text-align: center;
               margin: 0 24px;
+              min-width: 80px;
               > a {
                 display: block;
-                padding: 28px 0;
-                font-size: 18px;
+                padding: 18px 0;
+                font-size: 16px;
                 position: relative;
               }
 
@@ -80,7 +108,7 @@ header {
                 padding: 0 10px 0;
                 display: none;
                 text-align: left;
-                border-bottom: 1px solid $primary;
+                // border-bottom: 1px solid $primary;
 
                 > .menu-depth-2-list {
                   display: flex;
@@ -88,9 +116,20 @@ header {
                   margin: 0 auto;
                   border-left: 1px solid #f2f2f2;
                   border-right: 1px solid #f2f2f2;
-                  padding: 30px 20px 40px 30px;
+                  border-bottom: 1px solid $primary;
+                  // padding: 30px 20px 40px 30px;
+                  position: absolute;
+                  top: 1px;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                  .gnb-intro-area {
+                    width: 300px;
+                    background: $primary;
+                  }
                 }
                 .menu-depth-2 {
+                  padding: 24px 20px 24px 30px;
                   position: relative;
                   float: left;
                   > a {
@@ -124,6 +163,13 @@ header {
                     }
                   }
                 }
+                .btn-gnb-depth2-area-close {
+                  display: block;
+                  height: 20px;
+                  position: absolute;
+                  bottom: 4px;
+                  right: 4px;
+                }
               }
               & + .menu-depth-1 {
                 margin-left: $gnbOneDepthMargin;
@@ -140,12 +186,158 @@ header {
           margin-left: auto;
         }
       }
+      .m-gnb-area {
+        display: none;
+      }
       .etc-area {
         display: flex;
         align-items: center;
         > ul {
           align-items: center;
           display: flex;
+          > li {
+            a {
+              // padding: 28px 10px;
+              display: block;
+            }
+            & + li {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include MtoT {
+    .outer-container {
+      .inner-container {
+        &.width-default {
+          width: 100%;
+          padding: 0 20px;
+          .gnb-area {
+            display: none;
+          }
+        }
+        .m-gnb-area {
+          position: fixed;
+          left: 0;
+          top: 0;
+          background: #fff;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: stretch;
+          .btn-m-gnb {
+            display: none;
+          }
+          .m-gnb-title-area {
+            width: 100%;
+            position: absolute;
+            top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 3px solid #003876;
+            background: #fff;
+            h2 {
+              padding-left: 15px;
+              font-size: 18px;
+              color: #1a1a1a;
+              line-height: 20px;
+              font-weight: 500;
+            }
+          }
+          .m-gnb {
+            margin-top: 58px + 4px;
+            width: 100%;
+            .m-gnb-inner {
+              position: relative;
+              .menu-depth-1 {
+                > a {
+                  width: 75px;
+                  padding: 15px;
+                  font-size: 16px;
+                  display: block;
+                  background: #e6e7ec;
+                }
+                .menu-depth-2-container {
+                  position: absolute;
+                  top: 0;
+                  left: 75px;
+                  width: calc(100% - 75px);
+                  display: none;
+                  .gnb-intro-area {
+                    width: 100%;
+                    max-width: 360px;
+                    margin: 0 auto;
+                    background: red;
+                    height: 160px;
+                    order: 2;
+                  }
+                  .menu-depth-2-list {
+                    width: 100%;
+                    .menu-depth-2 {
+                      border-bottom: 1px solid #f2f2f2;
+                      > a {
+                        position: relative;
+                        display: block;
+                        padding: 15px;
+                        font-size: 16px;
+                        &::after {
+                          content: "";
+                          width: 10px;
+                          height: 10px;
+                          display: block;
+                          position: absolute;
+                          top: 0;
+                          bottom: 0;
+                          margin: auto;
+                          right: 0;
+                          background: red;
+                        }
+                      }
+                      .menu-depth-3-container {
+                        display: none;
+                        padding: 0 12px 12px 15px;
+                        transition: 1s;
+
+                        .menu-depth-3-list {
+                          background: rgb(231, 231, 231);
+                          .menu-depth-3 {
+                            > a {
+                              display: block;
+                              padding: 12px 8px;
+                              font-size: 16px;
+                            }
+                          }
+                        }
+                      }
+                      &.on {
+                        .menu-depth-3-container {
+                          display: block;
+                        }
+                      }
+                    }
+                  }
+                }
+                & + .menu-depth-1 {
+                  // margin-top: 16px;
+                }
+                &.on {
+                  > a {
+                    color: #fff;
+                    background: #0067b3;
+                  }
+                  .menu-depth-2-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
