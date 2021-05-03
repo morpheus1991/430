@@ -1,3 +1,36 @@
+@mixin M {
+  @media (min-width: 0) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+@mixin MtoT {
+  @media (min-width: 0) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+@mixin MtoPC {
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
+@mixin T {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+@mixin TtoPC {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin PC {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
 @mixin clearfix {
   &:after {
     display: block;

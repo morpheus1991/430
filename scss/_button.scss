@@ -11,17 +11,28 @@
   font-size: 18px;
   text-align: center;
 }
+.btn-sm {
+  height: 34px;
+  line-height: 34px;
+  width: 94px;
+  max-width: 100%;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
 
 .btn-white {
-  background: #fff !important;
-  color: #0055b8 !important;
+  background: #fff;
+  color: #0055b8;
 }
 
 .bg-light-gray,
 .bg-white {
   .btn {
-    background: #0055b8 !important;
-    color: #fff !important;
+    background: #0055b8;
+    color: #fff;
   }
 }
 .bg-darkblue {

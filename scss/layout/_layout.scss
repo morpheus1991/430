@@ -1,0 +1,13 @@
+.outer-container {
+  width: 100%;
+}
+.inner-container {
+  &.width-default {
+    width: $globalContainerWidth;
+    margin: 0 auto;
+  }
+}
+
+//header
+header {
+}
