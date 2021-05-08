@@ -125,7 +125,8 @@ header {
                   margin: auto;
                   .gnb-intro-area {
                     width: 300px;
-                    background: $primary;
+                    position: relative;
+                    background: url(../../assets/images/menu-inner-img1.jpg);
                   }
                 }
                 .menu-depth-2 {
@@ -165,10 +166,14 @@ header {
                 }
                 .btn-gnb-depth2-area-close {
                   display: block;
-                  height: 20px;
+                  width: 32px;
+                  height: 32px;
                   position: absolute;
-                  bottom: 4px;
-                  right: 4px;
+                  bottom: 0;
+                  right: 0;
+                  @include ir;
+                  background: url(../../assets/images/btn-m-gnb-close.png)
+                    no-repeat center/cover;
                 }
               }
               & + .menu-depth-1 {
@@ -201,7 +206,7 @@ header {
               display: block;
             }
             & + li {
-              margin-left: 10px;
+              margin-left: 20px;
             }
           }
         }
@@ -210,6 +215,9 @@ header {
   }
   @include MtoT {
     .outer-container {
+      &.state-area {
+        background: #fff;
+      }
       .inner-container {
         &.width-default {
           width: 100%;
@@ -219,22 +227,33 @@ header {
           }
         }
         .m-gnb-area {
-          position: fixed;
+          // position: fixed;
           left: 0;
-          top: 0;
-          background: #fff;
+          top: 4px;
+          // background: #fff;
           width: 100%;
-          height: 100%;
+          // height: 100%;
+          position: absolute;
+
           display: flex;
           align-items: stretch;
+          height: 35px;
           .btn-m-gnb {
-            display: none;
+            // top: 4px + 20px;
+            @include ir;
+            position: relative;
+            background: url(../../assets/images/btn-m-gnb.png) no-repeat
+              center/cover;
+            height: 32px;
+            width: 32px;
+            border: 0;
+            // display: none;
           }
           .m-gnb-title-area {
             width: 100%;
             position: absolute;
             top: 4px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: space-between;
             align-items: center;
@@ -248,8 +267,17 @@ header {
               line-height: 20px;
               font-weight: 500;
             }
+            .btn-m-gnb-close {
+              @include ir;
+              background: url(../../assets/images/btn-m-gnb-close.png) no-repeat
+                center/cover;
+              height: 32px;
+              width: 32px;
+              right: 0;
+            }
           }
           .m-gnb {
+            display: none;
             margin-top: 58px + 4px;
             width: 100%;
             .m-gnb-inner {
@@ -270,9 +298,9 @@ header {
                   display: none;
                   .gnb-intro-area {
                     width: 100%;
-                    max-width: 360px;
                     margin: 0 auto;
-                    background: red;
+                    background: url(../../assets/images/menu-inner-img1.jpg)
+                      no-repeat center / cover;
                     height: 160px;
                     order: 2;
                   }
@@ -280,22 +308,23 @@ header {
                     width: 100%;
                     .menu-depth-2 {
                       border-bottom: 1px solid #f2f2f2;
-                      > a {
+                      .menu-depth-2-a {
                         position: relative;
                         display: block;
                         padding: 15px;
                         font-size: 16px;
                         &::after {
                           content: "";
-                          width: 10px;
-                          height: 10px;
+                          width: 16px;
+                          height: 8px;
                           display: block;
                           position: absolute;
                           top: 0;
                           bottom: 0;
                           margin: auto;
-                          right: 0;
-                          background: red;
+                          right: 10px;
+                          background: url(../../assets/images/acodian-menu-off.png)
+                            no-repeat center/cover;
                         }
                       }
                       .menu-depth-3-container {
@@ -315,6 +344,12 @@ header {
                         }
                       }
                       &.on {
+                        .menu-depth-2-a {
+                          &::after {
+                            background: url(../../assets/images/acodian-menu-on.png)
+                              no-repeat center/cover;
+                          }
+                        }
                         .menu-depth-3-container {
                           display: block;
                         }
@@ -338,8 +373,38 @@ header {
               }
             }
           }
+          &.open {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            position: fixed;
+            top: 0;
+            .m-gnb-title-area {
+              display: flex;
+            }
+            .m-gnb {
+              display: block;
+            }
+            .btn-m-gnb {
+              display: none;
+            }
+          }
+        }
+        .etc-area {
+          display: none;
         }
       }
     }
   }
+}
+
+#aa {
+  position: absolute;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

@@ -21,7 +21,7 @@
   ],
   "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
   "liveSassCompile.settings.generateMap": true,
-  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-  "liveServer.settings.port": 3772,
-  "liveServer.settings.host": "192.168.219.102" // 본인 IP로 변경 사용
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+  // "liveServer.settings.port": 3772
+  // "liveServer.settings.host": "192.168.219.102" // 본인 IP로 변경 사용
 }

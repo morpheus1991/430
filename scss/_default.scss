@@ -133,11 +133,14 @@ a {
   text-decoration: none;
   color: #000;
 }
+button {
+  border: 0;
+  cursor: pointer;
+}
 
 .wrapper {
   // overflow: hidden;
   // overflow-y: scroll;
-  padding-bottom: 700px;
 }
 
 article {

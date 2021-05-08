@@ -1,0 +1,14 @@
+footer {
+  .footer-inner-wrapp {
+    .footer-section {
+      .footer-inner {
+        padding: 20px;
+        background: $gray-400;
+        p {
+          text-align: center;
+          color: $gray-600;
+        }
+      }
+    }
+  }
+}
