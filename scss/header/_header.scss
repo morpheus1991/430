@@ -81,7 +81,7 @@ header {
               text-align: center;
               margin: 0 24px;
               min-width: 80px;
-              > a {
+              .menu-depth-1-a {
                 display: block;
                 padding: 18px 0;
                 font-size: 16px;
@@ -101,7 +101,8 @@ header {
                   }
                 }
               }
-              .menu-depth-2-container {
+              .menu-floating-area {
+                // .menu-depth-2-container
                 position: absolute;
                 left: 0;
                 right: 0;
@@ -109,8 +110,14 @@ header {
                 display: none;
                 text-align: left;
                 // border-bottom: 1px solid $primary;
-
-                > .menu-depth-2-list {
+                .gnb-intro-area {
+                  width: 300px;
+                  position: relative;
+                  background: url(../../assets/images/menu-inner-img1.jpg);
+                }
+                > .menu-depth-2-container
+								// .menu-depth-2-list
+                {
                   display: flex;
                   width: $headerContainerWidth;
                   margin: 0 auto;
@@ -118,22 +125,18 @@ header {
                   border-right: 1px solid #f2f2f2;
                   border-bottom: 1px solid $primary;
                   // padding: 30px 20px 40px 30px;
+                  background: #fff;
                   position: absolute;
                   top: 1px;
                   left: 0;
                   right: 0;
                   margin: auto;
-                  .gnb-intro-area {
-                    width: 300px;
-                    position: relative;
-                    background: url(../../assets/images/menu-inner-img1.jpg);
-                  }
                 }
                 .menu-depth-2 {
                   padding: 24px 20px 24px 30px;
                   position: relative;
                   float: left;
-                  > a {
+                  .menu-depth-2-a {
                     color: $primary;
                   }
                   .menu-depth-3-container {
@@ -180,7 +183,7 @@ header {
                 margin-left: $gnbOneDepthMargin;
               }
               &.on {
-                .menu-depth-2-container {
+                .menu-floating-area {
                   display: block;
                 }
               }
@@ -283,77 +286,83 @@ header {
             .m-gnb-inner {
               position: relative;
               .menu-depth-1 {
-                > a {
+                display: flex;
+                .menu-depth-1-a {
                   width: 75px;
-                  padding: 15px;
-                  font-size: 16px;
+                  padding: 15px 8px;
+                  font-size: 14px;
                   display: block;
                   background: #e6e7ec;
                 }
-                .menu-depth-2-container {
+                // .menu-depth-2-container
+                .menu-floating-area {
                   position: absolute;
                   top: 0;
                   left: 75px;
                   width: calc(100% - 75px);
                   display: none;
-                  .gnb-intro-area {
+                  .menu-depth-2-container {
+                    display: flex;
                     width: 100%;
-                    margin: 0 auto;
-                    background: url(../../assets/images/menu-inner-img1.jpg)
-                      no-repeat center / cover;
-                    height: 160px;
-                    order: 2;
-                  }
-                  .menu-depth-2-list {
-                    width: 100%;
-                    .menu-depth-2 {
-                      border-bottom: 1px solid #f2f2f2;
-                      .menu-depth-2-a {
-                        position: relative;
-                        display: block;
-                        padding: 15px;
-                        font-size: 16px;
-                        &::after {
-                          content: "";
-                          width: 16px;
-                          height: 8px;
-                          display: block;
-                          position: absolute;
-                          top: 0;
-                          bottom: 0;
-                          margin: auto;
-                          right: 10px;
-                          background: url(../../assets/images/acodian-menu-off.png)
-                            no-repeat center/cover;
-                        }
-                      }
-                      .menu-depth-3-container {
-                        display: none;
-                        padding: 0 12px 12px 15px;
-                        transition: 1s;
-
-                        .menu-depth-3-list {
-                          background: rgb(231, 231, 231);
-                          .menu-depth-3 {
-                            > a {
-                              display: block;
-                              padding: 12px 8px;
-                              font-size: 16px;
-                            }
-                          }
-                        }
-                      }
-                      &.on {
+                    flex-wrap: wrap;
+                    .menu-depth-2-list {
+                      order: 1;
+                      width: 100%;
+                      .menu-depth-2 {
+                        border-bottom: 1px solid #f2f2f2;
                         .menu-depth-2-a {
+                          position: relative;
+                          display: block;
+                          padding: 15px;
+                          font-size: 16px;
                           &::after {
-                            background: url(../../assets/images/acodian-menu-on.png)
+                            content: "";
+                            width: 16px;
+                            height: 8px;
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            right: 10px;
+                            background: url(../../assets/images/acodian-menu-off.png)
                               no-repeat center/cover;
                           }
                         }
                         .menu-depth-3-container {
-                          display: block;
+                          display: none;
+                          padding: 0 12px 12px 15px;
+                          transition: 1s;
+
+                          .menu-depth-3-list {
+                            background: rgb(231, 231, 231);
+                            .menu-depth-3 {
+                              > a {
+                                display: block;
+                                padding: 12px 8px;
+                                font-size: 16px;
+                              }
+                            }
+                          }
+                        }
+                        &.on {
+                          .menu-depth-2-a {
+                            &::after {
+                              background: url(../../assets/images/acodian-menu-on.png)
+                                no-repeat center/cover;
+                            }
+                          }
+                          .menu-depth-3-container {
+                            display: block;
+                          }
                         }
                       }
+                    }
+                    .btn-gnb-depth2-area-close {
+                      display: none;
+                    }
+                    .gnb-intro-area {
+                      display: none;
                     }
                   }
                 }
@@ -365,7 +374,7 @@ header {
                     color: #fff;
                     background: #0067b3;
                   }
-                  .menu-depth-2-container {
+                  .menu-floating-area {
                     display: flex;
                     flex-wrap: wrap;
                   }

@@ -19,19 +19,6 @@
             display: block;
             padding: 16px 5px 15px;
             color: #1a1a1a;
-            &::after {
-              content: "";
-              width: 16px;
-              height: 8px;
-              display: block;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              margin: auto;
-              right: 10px;
-              background: url(../../assets/images/acodian-menu-off.png)
-                no-repeat center/cover;
-            }
           }
 
           .menu-depth-3-container {
@@ -48,8 +35,9 @@
               }
             }
           }
-          &.on {
-            > a {
+
+          &.has-child {
+            .menu-depth-2-a {
               &::after {
                 content: "";
                 width: 16px;
@@ -60,15 +48,37 @@
                 bottom: 0;
                 margin: auto;
                 right: 10px;
-                background: url(../../assets/images/acodian-menu-on.png)
+                background: url(../../assets/images/acodian-menu-off.png)
                   no-repeat center/cover;
               }
             }
-            .menu-depth-3-container {
-              display: block;
+            .menu-depth-2-a {
+            }
+            &.on {
+              > a {
+                &::after {
+                  content: "";
+                  width: 16px;
+                  height: 8px;
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  right: 10px;
+                  background: url(../../assets/images/acodian-menu-on.png)
+                    no-repeat center/cover;
+                }
+              }
+              .menu-depth-3-container {
+                display: block;
+              }
             }
           }
         }
+      }
+      .btn-gnb-depth2-area-close {
+        display: none;
       }
     }
   }
