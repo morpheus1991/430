@@ -121,7 +121,7 @@ header {
                   display: flex;
                   width: $headerContainerWidth;
                   margin: 0 auto;
-                  border-left: 1px solid #f2f2f2;
+                  // border-left: 1px solid #f2f2f2;
                   border-right: 1px solid #f2f2f2;
                   border-bottom: 1px solid $primary;
                   // padding: 30px 20px 40px 30px;
@@ -310,24 +310,12 @@ header {
                       width: 100%;
                       .menu-depth-2 {
                         border-bottom: 1px solid #f2f2f2;
+
                         .menu-depth-2-a {
                           position: relative;
                           display: block;
                           padding: 15px;
                           font-size: 16px;
-                          &::after {
-                            content: "";
-                            width: 16px;
-                            height: 8px;
-                            display: block;
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            margin: auto;
-                            right: 10px;
-                            background: url(../../assets/images/acodian-menu-off.png)
-                              no-repeat center/cover;
-                          }
                         }
                         .menu-depth-3-container {
                           display: none;
@@ -345,15 +333,34 @@ header {
                             }
                           }
                         }
-                        &.on {
-                          .menu-depth-2-a {
-                            &::after {
-                              background: url(../../assets/images/acodian-menu-on.png)
-                                no-repeat center/cover;
+                        &.has-child {
+                          &.on {
+                            .menu-depth-2-a {
+                              &::after {
+                                background: url(../../assets/images/acodian-menu-on.png)
+                                  no-repeat center/cover;
+                              }
+                            }
+                            .menu-depth-3-container {
+                              display: block;
                             }
                           }
-                          .menu-depth-3-container {
-                            display: block;
+                        }
+                        &.has-child {
+                          .menu-depth-2-a {
+                            &::after {
+                              content: "";
+                              width: 16px;
+                              height: 8px;
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              bottom: 0;
+                              margin: auto;
+                              right: 10px;
+                              background: url(../../assets/images/acodian-menu-off.png)
+                                no-repeat center/cover;
+                            }
                           }
                         }
                       }

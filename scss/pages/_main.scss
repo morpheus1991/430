@@ -1,0 +1,46 @@
+#content {
+  &.main {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.main-intro-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+    > span {
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      font-size: 100px;
+      color: $gray-600;
+      &:nth-child(2) {
+        margin-left: 50%;
+        transition: 0.5s;
+        &.on {
+          transform: scale(1.6) translate(20%, -10%);
+        }
+      }
+      &:hover {
+        color: $gray-900;
+      }
+      &.on {
+        color: $gray-900;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.inline-block-list {
+  background: yellow;
+  height: 400px;
+  > li {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: red;
+    padding: 10px;
+  }
+  &.container-font-0 {
+    font-size: 0;
+  }
+  &.container-font-16 {
+    font-size: 16px;
+  }
+
+  &.container-font-40 {
+    font-size: 40px;
+  }
+
+  &.item-font-0 {
+    > li {
+      font-size: 0px;
+    }
+  }
+  &.item-font-16 {
+    > li {
+      font-size: 16px;
+    }
+  }
+  &.item-font-40 {
+    > li {
+      font-size: 40px;
+    }
+  }
+  &.container-lineHeight-atuo {
+    line-height: auto;
+  }
+  &.container-lineHeight-400 {
+    line-height: 400px;
+  }
+  &.container-lineHeight-800 {
+    line-height: 800px;
+  }
+  &.item-lineHeight-16 {
+    > li {
+      line-height: 16px;
+    }
+  }
+  &.item-lineHeight-20 {
+    > li {
+      line-height: 400px;
+    }
+  }
+  &.item-lineHeight-400 {
+    > li {
+      line-height: 800px;
+    }
+  }
+  &.item-vertical-align-top {
+    > li {
+      vertical-align: top;
+    }
+  }
+  &.item-vertical-align-middle {
+    > li {
+      vertical-align: middle;
+    }
+  }
+  &.item-vertical-align-bottom {
+    > li {
+      vertical-align: bottom;
+    }
+  }
+}
+
+.article-title-2 {
+  display: block;
+  font-size: 24px;
+  & + .btn-area {
+    margin-top: 14px;
+  }
+}
+.option-controll-area {
+  margin-top: 30px;
+}
+
+.method-area {
+}

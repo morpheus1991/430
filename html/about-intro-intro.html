@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header include-html="./header/header.html"></header>
+      <div class="content-wrapper">
+        <article id="content">
+          <div class="inner-container width-default relative">
+            <ol class="path">
+              <li>
+                <a href="./main.html">HOME</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro.html">About</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro.html">자기소개</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro.html">소개</a>
+              </li>
+            </ol>
+            <div class="lnb-area">
+              <nav class="lnb-nav"></nav>
+            </div>
+            <div class="content-outer">
+              <div class="title-area">
+                <h2>소개</h2>
+              </div>
+              <div class="content">
+                <div class="section-area">
+                  <section class="scroll-section" id="scroll-section-0">
+                    <h1></h1>
+                    <div class="sticky-elem main-message a">
+                      <p>메시지메시지1111</p>
+                    </div>
+                    <div class="sticky-elem main-message b">
+                      <p>메시지메시지2222</p>
+                    </div>
+                    <div class="sticky-elem main-message c">
+                      <p>메시지메시지3333</p>
+                    </div>
+                    <div class="sticky-elem main-message d">
+                      <p>메시지<br />메시지4444</p>
+                    </div>
+                  </section>
+                  <section class="scroll-section" id="scroll-section-1">
+                    <p class="description">
+                      <strong>보통스크롤영역</strong> Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Minima quidem quas
+                      architecto, atque molestiae vel blanditiis reprehenderit
+                      nostrum labore cumque quibusdam animi cupiditate debitis
+                      fugit ipsa, commodi, assumenda et voluptatum culpa?
+                      Impedit animi molestias, distinctio dignissimos temporibus
+                      cupiditate est? Corporis sit ut soluta exercitationem
+                      voluptates iste, nulla eligendi eum, ipsum obcaecati
+                      distinctio dolore deleniti dolor quis officiis maiores?
+                      Error quisquam, aliquid obcaecati laborum atque, iure
+                      velit, officiis qui voluptatibus vero aliquam dicta sequi
+                      exercitationem odio! Debitis ex porro amet veniam dolor
+                      odit, nostrum perspiciatis rem, tenetur nulla, tempora
+                      repudiandae repellendus nobis fugiat blanditiis eaque iste
+                      laudantium veritatis optio excepturi! Exercitationem
+                      voluptas at voluptates dolore saepe totam iste ipsum iusto
+                      molestias consequuntur odio adipisci fugit commodi
+                      officiis dolorem, amet velit laboriosam! Dolor
+                      dignissimos, veritatis sunt quia similique praesentium cum
+                      possimus non exercitationem amet iure ea qui minus dolores
+                      consequuntur provident tempora expedita quasi, consequatur
+                      architecto ex officiis, facere eius. Harum autem impedit
+                      dolor minima nobis eum, velit consequuntur ex error,
+                      tempora similique possimus tempore? Sint ducimus sunt
+                      praesentium provident, a iusto quis. Ipsa laudantium animi
+                      eius non, asperiores officiis labore, commodi,
+                      consequuntur omnis inventore sint. Unde sapiente corrupti,
+                      esse tenetur obcaecati dolores quo molestiae possimus eius
+                      ducimus minima numquam quibusdam modi!
+                    </p>
+                  </section>
+                  <section class="scroll-section" id="scroll-section-2">
+                    <div class="sticky-elem main-message">
+                      <p>
+                        <small>편안한 촉감</small>
+                        입과 하나 되다
+                      </p>
+                    </div>
+                    <div class="sticky-elem desc-message">
+                      <p>
+                        111Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Eum nisi soluta dolorem quos, veniam praesentium
+                        rem quo quam harum nesciunt.
+                      </p>
+                      <div class="pin"></div>
+                    </div>
+                    <div class="sticky-elem desc-message">
+                      <p>
+                        222Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Eum nisi soluta dolorem quos, veniam praesentium
+                        rem quo quam harum nesciunt.
+                      </p>
+                      <div class="pin"></div>
+                    </div>
+                  </section>
+                  <section class="scroll-section" id="scroll-section-3">
+                    <p class="mid-message">
+                      <strong>retina머그</strong>
+                      아이디어를 광활하게<br />
+                      블라블라블라
+                    </p>
+                    <p class="canvas-caption">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eligendi sapiente amet laudantium nam minima rerum eius
+                      soluta placeat, aliquid mollitia dignissimos praesentium
+                      dolore quam illo! Delectus ratione, vel eos similique,
+                      molestias nostrum saepe aperiam alias aliquam possimus,
+                      excepturi quo. Maxime.
+                    </p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <footer include-html="./footer/footer.html"></footer>
+    </div>
+  </body>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("include-html");
+        if (file) {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              elmnt.innerHTML = this.responseText;
+              elmnt.removeAttribute("include-html");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          return;
+        }
+      }
+    }
+    includeHTML();
+  </script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/basic.js"></script>
+  <script src="../assets/js/intro.js"></script>
+</html>

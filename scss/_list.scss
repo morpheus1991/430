@@ -1,0 +1,148 @@
+.label-date-list-wrapper {
+  .label-date-list {
+    > .item {
+      padding: 28px 0 28px;
+      border-bottom: 1px solid rgba(69, 79, 93, 0.07);
+      position: relative;
+      > a {
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        padding: 0 40px;
+        .text-area {
+          width: 100%;
+          order: 2;
+          margin-top: 10px;
+
+          strong {
+            font-size: 22px;
+            position: relative;
+          }
+          .text {
+            margin-top: 20px;
+          }
+        }
+        .date-area {
+          width: 100%;
+          order: 1;
+          font-size: 14px;
+          // line-height: 18px;
+          display: flex;
+          flex-wrap: wrap;
+          .date {
+            width: 100%;
+            display: block;
+            color: rgb(176, 184, 193);
+            & + .label-area {
+              // margin-left: 8px;
+            }
+          }
+        }
+        .label-area {
+          margin-top: 10px;
+          order: 4;
+          width: 100%;
+          display: block;
+          color: rgb(49, 130, 246);
+        }
+
+        &:hover {
+          @include PC {
+            transform: scale(1.02);
+            strong {
+              &::before {
+                content: "";
+                background: #000;
+                top: 0;
+                bottom: 0;
+                left: -10px;
+                width: 4px;
+                margin: auto;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+
+      @include PC {
+        &.link {
+          > a {
+            &::after {
+              content: "";
+              display: flex;
+              position: absolute;
+              width: 26px;
+              height: 22px;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              right: 0;
+              background: url(../images/right_arrow.png) no-repeat center/ 26px
+                22px;
+              opacity: 0;
+              transition: 0.5s;
+            }
+            &:hover {
+              &::after {
+                content: "";
+                display: flex;
+                position: absolute;
+                width: 26px;
+                height: 22px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                right: 0;
+                background: url(../images/right_arrow.png) no-repeat center/
+                  26px 22px;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      @include MtoT {
+        padding: 12px 0 32px;
+        > a {
+          padding: 0;
+          .text-area {
+            margin-top: 6px;
+            .title-area {
+              font-size: 16px;
+              word-break: keep-all;
+            }
+            .text {
+              margin-top: 10px;
+              font-size: 12px;
+              line-height: 14px;
+              word-break: keep-all;
+            }
+          }
+          .label-area {
+            margin-top: 6px;
+            font-size: 12px;
+          }
+        }
+        &.link {
+          > a {
+            &::after {
+              content: "Link";
+              display: flex;
+              position: absolute;
+              right: 0;
+              top: 0;
+              padding: 4px 10px;
+              background: #3182f6;
+              color: #fff;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      & + .item {
+        margin-top: 20px;
+      }
+    }
+  }
+}
