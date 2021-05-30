@@ -1,0 +1,96 @@
+.university-area {
+  display: flex;
+  flex-wrap: wrap;
+
+  .contents-area {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    .image-area {
+      width: 106px;
+      img {
+        width: 100%;
+      }
+    }
+    .text-area {
+      display: flex;
+      align-items: center;
+      margin-left: 36px;
+      dt {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      dd {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.job-traning-list {
+  .item {
+    border: 1px solid #f2f2f2;
+    margin-top: 20px;
+    padding: 24px;
+    .item-inner {
+      .title {
+        font-weight: bold;
+        // margin-top: 20px;
+      }
+      .desc {
+        margin-top: 24px;
+        padding-left: 10px;
+
+        .sub-item {
+          display: flex;
+          position: relative;
+          line-height: 20px;
+
+          dt {
+            padding-left: 12px;
+            display: inline-block;
+            min-width: 80px;
+            &::before {
+              content: "";
+              width: 4px;
+              display: block;
+              background: #b5acd1;
+              margin-right: 4px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            }
+          }
+          dd {
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          & + .sub-item {
+            margin-top: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.job-traning-list {
+  margin-top: 20px;
+  p {
+    line-height: 1.5;
+    strong {
+      font-weight: bold;
+      display: block;
+    }
+  }
+  .image-area {
+    max-width: 500px;
+    margin-top: 20px;
+    img {
+      width: 100%;
+    }
+  }
+}

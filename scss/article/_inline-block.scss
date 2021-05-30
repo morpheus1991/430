@@ -1,12 +1,14 @@
 .inline-block-list {
   background: yellow;
   height: 400px;
+  transition: 0.5s;
   > li {
     display: inline-block;
     width: 200px;
     height: 200px;
     background: red;
     padding: 10px;
+    transition: 0.5s;
   }
   &.container-font-0 {
     font-size: 0;
@@ -34,6 +36,16 @@
       font-size: 40px;
     }
   }
+  &.container-text-align-left {
+    text-align: left;
+  }
+  &.container-text-align-center {
+    text-align: center;
+  }
+  &.container-text-align-right {
+    text-align: right;
+  }
+
   &.container-lineHeight-atuo {
     line-height: auto;
   }
@@ -75,9 +87,9 @@
   }
 }
 
-.article-title-2 {
+.title1 {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   & + .btn-area {
     margin-top: 14px;
   }
@@ -86,5 +98,26 @@
   margin-top: 30px;
 }
 
-.method-area {
+.method-info-area {
+  padding: 30px 40px;
+  background: $gray-100;
+  .method-info-inner {
+    dt {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    dt + dd {
+      margin-top: 16px;
+    }
+  }
+  & + .inline-block-section {
+    margin-top: 20px;
+  }
+}
+
+.btn-area {
+  button.on {
+    background: $primary;
+    color: #fff;
+  }
 }

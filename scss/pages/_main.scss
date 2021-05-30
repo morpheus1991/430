@@ -1,5 +1,6 @@
 #content {
   &.main {
+    background: url(../../assets/images/img-main-bg.jpg);
     &::before {
       content: "";
       position: absolute;

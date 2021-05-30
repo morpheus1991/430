@@ -156,3 +156,9 @@ article {
     color: #fff;
   }
 }
+
+* {
+  :focus {
+    outline: 1px solid blue;
+  }
+}

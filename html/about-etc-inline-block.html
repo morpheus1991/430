@@ -24,13 +24,13 @@
                 <a href="./main.html">HOME</a>
               </li>
               <li>
-                <a href="./about-intro-intro.html">About</a>
+                <a href="./about-intro-intro1.html">About</a>
               </li>
               <li>
-                <a href="./about-intro-intro.html">자기소개</a>
+                <a href="./about-intro-intro1.html">자기소개</a>
               </li>
               <li>
-                <a href="./about-intro-intro.html">소개</a>
+                <a href="./about-intro-intro1.html">소개</a>
               </li>
             </ol>
             <div class="lnb-area">
@@ -46,17 +46,17 @@
                     <dl class="method-info-inner">
                       <dt>인라인블럭 수직정렬 시켜보기</dt>
                       <dd>
-                        <ol>
+                        <ol class="dot-list">
                           <li>
                             수직정렬 시킬 요소의 부모 컨테이너에게 높이와 같은
                             line-height를 준다.
                             <br />
                             (예시 ul높이는 400px이므로 400px 설정)
                             <br />
-                            이때 line-height는 하위요소에게 상속되는데,
-                            이로인하여 어마어마한 줄높이로 인한 넘침현상이 발생
-                            할 수도 있다. 바로 하위레벨에서 line-height를
-                            재지정하여 해결한다.(예시:li의 line-height를 16px로)
+                            이때 line-height는 하위요소에게 상속된다. 줄높이로
+                            넘침현상이 발생 할 수도 있다. <br />
+                            바로 하위레벨에서 line-height를 재지정하여
+                            해결.(예시:li의 line-height를 16px로)
                           </li>
                           <li>
                             수직정렬 시킬 대상에게 vertical-align: middle을
@@ -69,28 +69,24 @@
                             요소의 부모에게 font-size:0을 준다.
                             <br />
                             그러면 해당 부모요소의 하위요소의 텍스트가 없어지는
-                            현상이 발생할 수 있는데 하위요소에서 다시 font-size
-                            지정하여 텍스트 사라지는 현상 해결하면 된다. (예시
-                            li에게 font-size 16px)
+                            현상이 발생할 수 있다.
+                            <br />
+                            하위요소에서 다시 font-size 지정하여 텍스트 사라지는
+                            현상 해결하면 된다. <br />(예시 li에게 font-size
+                            16px)
                           </li>
-                          <li></li>
                         </ol>
                       </dd>
                     </dl>
                   </div>
-                  <div>
-                    <div>
-                      <strong> 노란색 컨테이너 : ul </strong>
-
-                      <strong> 빨간색 아이템 (수직정렬 대상): li </strong>
-                    </div>
+                  <div class="inline-block-section">
                     <ul class="inline-block-list">
                       <li>li</li>
                       <li>li</li>
                       <li>li</li>
                     </ul>
                     <div class="option-controll-area">
-                      <strong class="article-title-2"
+                      <strong class="title1"
                         >ul에의 폰트사이즈를 변경한다면?</strong
                       >
                       <div class="container-font-size-btn-area btn-area">
@@ -106,7 +102,7 @@
                       </div>
                     </div>
                     <div class="option-controll-area">
-                      <strong class="article-title-2"
+                      <strong class="title1"
                         >ul에의 line-height를 변경한다면?</strong
                       >
                       <div class="container-line-height-btn-area btn-area">
@@ -131,7 +127,32 @@
                       </div>
                     </div>
                     <div class="option-controll-area">
-                      <strong class="article-title-2"
+                      <strong class="title1"
+                        >ul에의 text-align를 변경한다면?</strong
+                      >
+                      <div class="container-text-align-btn-area btn-area">
+                        <button
+                          type="button"
+                          data-value="container-text-align-left"
+                        >
+                          text-align:left;
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-text-align-center"
+                        >
+                          text-align:center
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-text-align-right"
+                        >
+                          text-align:right
+                        </button>
+                      </div>
+                    </div>
+                    <div class="option-controll-area">
+                      <strong class="title1"
                         >li의 vertical-align를 변경해보자</strong
                       >
                       <div class="container-vertical-align-btn-area btn-area">
@@ -157,7 +178,7 @@
                     </div>
 
                     <div class="option-controll-area">
-                      <strong class="article-title-2"
+                      <strong class="title1"
                         >li에의 line-height를 변경한다면?</strong
                       >
                       <div class="item-line-height-btn-area btn-area">
@@ -173,7 +194,7 @@
                       </div>
                     </div>
                     <div class="option-controll-area">
-                      <strong class="article-title-2"
+                      <strong class="title1"
                         >li에의 폰트사이즈를 변경한다면?</strong
                       >
                       <div class="item-font-size-btn-area btn-area">

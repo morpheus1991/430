@@ -1,0 +1,15 @@
+.title1 {
+  font-size: 16px;
+  padding: 16px 0 0;
+  font-weight: bold;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: red;
+    position: absolute;
+    top: 0;
+  }
+}

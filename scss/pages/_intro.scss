@@ -1,17 +1,28 @@
 .scroll-section {
   padding-top: 50vh;
+  margin: 0 auto;
+  h1 {
+    font-size: 100px;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10vh;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 #scroll-section-0 {
-  h1 {
-    font-size: 16px;
-  }
 }
 
 .main-message {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 30vh;
   height: 3em;
   font-size: 60px;
   margin: 4px 0;
@@ -47,6 +58,7 @@
 .desc-message {
   font-weight: bold;
   width: 50%;
+  opacity: 0;
   .pin {
     width: 1px;
     height: 100px;
@@ -71,13 +83,13 @@
 
 .sticky-elem {
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
   display: none;
 }
 
 #show-scroll-scene-0 {
+  color: #fff;
   #scroll-section-0 {
     .sticky-elem {
       display: block;
@@ -97,6 +109,14 @@
       display: block;
     }
   }
+  .b {
+    top: 10%;
+    left: 40%;
+  }
+  .c {
+    top: 15%;
+    left: 45%;
+  }
 }
 #show-scroll-scene-3 {
   #scroll-section-3 {
@@ -106,5 +126,138 @@
   }
 }
 
-@include PC {
+.sticky-elem-canvas {
+  top: 0;
+  height: 100%;
+  canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.image-blend-canvas {
+  border: 3px solid red;
+}
+@include TtoPC {
+  #show-scroll-scene-2 {
+    .b {
+      top: 20%;
+      left: 53%;
+    }
+    .c {
+      left: 55%;
+    }
+  }
+}
+
+// 새롭게
+
+.change-area {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  position: relative;
+  .text-area {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+  }
+  .percent-area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    .percent-bar {
+      width: 50%;
+      height: 100%;
+      background: blue;
+    }
+  }
+}
+
+.desc-list {
+  .item {
+    display: flex;
+    padding: 6px 10px;
+    justify-content: space-between;
+    min-height: 100px;
+    .desc-list-title {
+      width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgb(238, 238, 238);
+      padding: 10px;
+      word-break: keep-all;
+      text-align: center;
+    }
+    .desc-list-desc {
+      width: calc(100% - 160px);
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.intro-circle-pic-area {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: red;
+  }
+}
+
+.tab-area {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  .tab-btn-area {
+    width: 100%;
+    .tab-item {
+      float: left;
+      border: 1px solid $gray-400;
+      min-width: 200px;
+      a {
+        padding: 10px 16px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      &.on {
+        background: $primary;
+        border: 1px solid $primary;
+        a {
+          color: #fff;
+        }
+        .tab-content {
+          display: block;
+        }
+      }
+      .tab-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        &.on {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .tab-content-area {
+    width: 100%;
+    // position: absolute;
+  }
 }

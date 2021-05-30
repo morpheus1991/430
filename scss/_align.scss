@@ -32,3 +32,9 @@
 .relative {
   position: relative;
 }
+
+@for $i from 1 to 20 {
+  .mt#{$i} {
+    margin-top: $i * 5px;
+  }
+}
