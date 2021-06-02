@@ -46,7 +46,12 @@ const closest = (startEl, selector) => {
 
   return currentEl;
 };
-
+const hasNext = (el) => {
+  const nextEl = el.nextElementSibling;
+  console.log(nextEl);
+  // console.log(el.nextElementSibling);
+  return nextEl;
+};
 const throttle = (func, limit) => {
   let inThrottle;
   return function () {

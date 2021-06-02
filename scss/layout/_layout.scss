@@ -37,6 +37,8 @@ body {
   .content-wrapper {
     width: 100%;
     min-height: calc(100vh - 85px);
+    position: relative;
+    overflow: hidden;
 
     > #content {
       background-repeat: no-repeat;
@@ -98,9 +100,11 @@ body {
 
         .lnb-area {
           .lnb-nav {
-            padding-top: 100px;
             .menu-depth-2-container {
               .gnb-intro-area {
+                background: url(../../assets/images/mh@2x.png) no-repeat;
+                background-position: center;
+                background-size: 160px;
                 h2 {
                   position: relative;
                   padding-bottom: 29px;

@@ -1,14 +1,16 @@
 .lnb-area {
   width: 170px;
   .lnb-nav {
+    height: 100%;
+    display: flex;
+    padding-top: 400px;
     .gnb-intro-area {
-      width: 100%;
-      height: 200px;
-      background: red;
+      display: none;
     }
     .menu-depth-2-container {
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
       .menu-depth-2-list {
         width: 100%;
         .menu-depth-2 {

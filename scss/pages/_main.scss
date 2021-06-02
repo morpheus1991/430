@@ -8,7 +8,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(0, 0, 0, 0.4);
     }
   }
 }
@@ -23,21 +23,25 @@
   h2 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     > span {
       cursor: pointer;
       display: flex;
-      width: 100%;
+      width: 50%;
       font-size: 100px;
-      color: $gray-600;
-      &:nth-child(2) {
-        margin-left: 50%;
+      color: transparent;
+      padding: 80px;
+      &:nth-child(3) {
+        display: inline-flex;
         transition: 0.5s;
+        width: auto;
+        justify-content: center;
         &.on {
           transform: scale(1.6) translate(20%, -10%);
         }
       }
       &:hover {
-        color: $gray-900;
+        color: #fff;
       }
       &.on {
         color: $gray-900;
