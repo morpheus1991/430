@@ -1,326 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <header include-html="./header/header.html"></header>
-      <div class="content-wrapper">
-        <article id="content">
-          <div class="inner-container width-default relative">
-            <ol class="path">
-              <li>
-                <a href="./main.html">HOME</a>
-              </li>
-              <li>
-                <a href="./about-intro-intro1.html">About</a>
-              </li>
-              <li>
-                <a href="./about-intro-intro1.html">자기소개</a>
-              </li>
-              <li>
-                <a href="./about-intro-intro1.html">소개</a>
-              </li>
-            </ol>
-            <div class="lnb-area">
-              <nav class="lnb-nav"></nav>
-            </div>
-            <div class="content-outer">
-              <div class="title-area">
-                <h2>소개</h2>
-              </div>
-              <div class="content">
-                <div class="section-area">
-                  <h3 class="title1">안녕하세요</h3>
-                  <div class="intro-circle-pic-area">
-                    <img src="../assets/images/mh@2x.png" alt="" />
-                  </div>
-                  <div class="change-area">
-                    <span class="text-area"
-                      ><span class="change-text"></span>조민혁 입니다.</span
-                    >
-                    <div class="percent-area">
-                      <div class="percent-bar"></div>
-                    </div>
-                  </div>
-                  <div class="tab-area mt6">
-                    <ul class="tab-header-area">
-                      <li class="item on">
-                        <a class="tab-btn tab1" href="#">퍼블리싱</a>
-                      </li>
-                      <li class="item">
-                        <a class="tab-btn" href="#">etc</a>
-                      </li>
-                      <li class="item">
-                        <a class="tab-btn" href="#">etc</a>
-                      </li>
-                      <li class="item">
-                        <a class="tab-btn" href="#">etc</a>
-                      </li>
-                    </ul>
-                    <ul class="tab-body-area">
-                      <li class="tab-content-item on" tabindex="0">
-                        <div class="tab-content">
-                          <h3 class="title1">ETC</h3>
-                          <div class="desc-list">
-                            <dl class="item">
-                              <dt class="desc-list-title">재능기부</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  다수의 퍼블리싱 입문자 및 취업준비생, 현직
-                                  개발자 등에게 무료교육을 지속적으로 해오고
-                                  있습니다. (마크업/레이아웃/git/scss 등)
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">
-                                UX/UI 디자이너 양성
-                              </dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  UXUI디자이너를 양성한 경험이 있습니다.(1명)
-                                  <br />컴포넌트에 대한 개념, 디바이스별 대응,
-                                  스타일가이드와 디스크립션, figma, 와이어프레임
-                                  및 프로토타이핑 등을 교육하였습니다. 특히
-                                  컴포넌트와 스타일가이드 디스크립션 등에 역점을
-                                  두었습니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">퍼블리셔 양성</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  직업군인 전역한 친구에게 퍼블리싱을 가르치고
-                                  있습니다.
-                                  <br />
-                                  커리큘럼 : git주소 :
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">
-                                디자이너 기술 블로그 프로젝트
-                              </dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  디자이너를 위한 기술블로그 콘텐츠를 기획 및
-                                  검수하였습니다. (아래 블로그는 제가 취업준비
-                                  시킨 ux/ui 신입 디자이너의 블로그입니다.)
-                                </a>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="tab-content-item" tabindex="0">
-                        <div class="tab-content">
-                          <h3 class="title1">퍼블리싱</h3>
-                          <div class="desc-list">
-                            <dl class="item">
-                              <dt class="desc-list-title">컴포넌트</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  공통 컴포넌트 정의는 현대 웹의 중요한 지향점
-                                  중 하나라고 볼 수 있습니다.<br />
-                                  재사용성/생산성에 직결되기 때문입니다.<br />디자인
-                                  규격에 따라 재사용성 높은 공통 컴포넌트를
-                                  정의하고 구현합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">웹접근성</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  웹접근성 프로젝트에서 PA로 다수 참여하였으며
-                                  웹 접근성 프로젝트 수행이 가능합니다.<br />
-                                  (신입사원을 대상으로 웹접근성 교육 실시한 경험
-                                  있음)
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">커뮤니케이션</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  한 걸음 뒤에 서서 배려와 존중이 있는 대화를
-                                  하기 위해 노력합니다.<br />
-                                  밝고 긍정적으로 커뮤니케이션 합니다.<br />
-                                  디스크립션은 명료하고 시원하게 달기 위해
-                                  노력합니다.<br />
-                                  열띤 의견개진이 필요한 상황에서는 뜨겁게
-                                  이야기 합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">직무능력개발</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  꾸준하고 지속적인 자기개발 덕후로 정평이
-                                  나있습니다. (인프런 vvip)
-                                </a>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="tab-content-item" tabindex="0">
-                        <div class="tab-content">
-                          <h3 class="title1">퍼블리싱</h3>
-                          <div class="desc-list">
-                            <dl class="item">
-                              <dt class="desc-list-title">컴포넌트</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  공통 컴포넌트 정의는 현대 웹의 중요한 지향점
-                                  중 하나라고 볼 수 있습니다.<br />
-                                  재사용성/생산성에 직결되기 때문입니다.<br />디자인
-                                  규격에 따라 재사용성 높은 공통 컴포넌트를
-                                  정의하고 구현합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">웹접근성</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  웹접근성 프로젝트에서 PA로 다수 참여하였으며
-                                  웹 접근성 프로젝트 수행이 가능합니다.<br />
-                                  (신입사원을 대상으로 웹접근성 교육 실시한 경험
-                                  있음)
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">커뮤니케이션</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  한 걸음 뒤에 서서 배려와 존중이 있는 대화를
-                                  하기 위해 노력합니다.<br />
-                                  밝고 긍정적으로 커뮤니케이션 합니다.<br />
-                                  디스크립션은 명료하고 시원하게 달기 위해
-                                  노력합니다.<br />
-                                  열띤 의견개진이 필요한 상황에서는 뜨겁게
-                                  이야기 합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">직무능력개발</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  꾸준하고 지속적인 자기개발 덕후로 정평이
-                                  나있습니다. (인프런 vvip)
-                                </a>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="tab-content-item" tabindex="0">
-                        <div class="tab-content">
-                          <h3 class="title1">퍼블리싱</h3>
-                          <div class="desc-list">
-                            <dl class="item">
-                              <dt class="desc-list-title">컴포넌트</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  공통 컴포넌트 정의는 현대 웹의 중요한 지향점
-                                  중 하나라고 볼 수 있습니다.<br />
-                                  재사용성/생산성에 직결되기 때문입니다.<br />디자인
-                                  규격에 따라 재사용성 높은 공통 컴포넌트를
-                                  정의하고 구현합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">웹접근성</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  웹접근성 프로젝트에서 PA로 다수 참여하였으며
-                                  웹 접근성 프로젝트 수행이 가능합니다.<br />
-                                  (신입사원을 대상으로 웹접근성 교육 실시한 경험
-                                  있음)
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">커뮤니케이션</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  한 걸음 뒤에 서서 배려와 존중이 있는 대화를
-                                  하기 위해 노력합니다.<br />
-                                  밝고 긍정적으로 커뮤니케이션 합니다.<br />
-                                  디스크립션은 명료하고 시원하게 달기 위해
-                                  노력합니다.<br />
-                                  열띤 의견개진이 필요한 상황에서는 뜨겁게
-                                  이야기 합니다.
-                                </a>
-                              </dd>
-                            </dl>
-                            <dl class="item">
-                              <dt class="desc-list-title">직무능력개발</dt>
-                              <dd class="desc-list-desc">
-                                <a href="#">
-                                  꾸준하고 지속적인 자기개발 덕후로 정평이
-                                  나있습니다. (인프런 vvip)
-                                </a>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-      <footer include-html="./footer/footer.html"></footer>
-    </div>
-  </body>
-  <script>
-    function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      z = document.getElementsByTagName("*");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute("include-html");
-        if (file) {
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-              elmnt.innerHTML = this.responseText;
-              elmnt.removeAttribute("include-html");
-              includeHTML();
-            }
-          };
-          xhttp.open("GET", file, true);
-          xhttp.send();
-          return;
-        }
-      }
-    }
-    includeHTML();
-  </script>
-  <script src="../assets/js/common.js"></script>
-  <script src="../assets/js/basic.js"></script>
-  <script src="../assets/js/intro.js"></script>
-  <script></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<header include-html="./header/header.html"></header>
+		<div class="content-wrapper">
+			<article id="content">
+				<div class="inner-container width-default relative">
+					<ol class="path">
+						<li>
+							<a href="./main.html">HOME</a>
+						</li>
+						<li>
+							<a href="./about-intro-intro1.html">About</a>
+						</li>
+						<li>
+							<a href="./about-intro-intro1.html">자기소개</a>
+						</li>
+						<li>
+							<a href="./about-intro-intro1.html">소개</a>
+						</li>
+					</ol>
+					<div class="lnb-area">
+						<nav class="lnb-nav"></nav>
+					</div>
+					<div class="content-outer">
+						<div class="title-area">
+							<h2>소개</h2>
+						</div>
+						<div class="content">
+							<div class="section-area">
+								<h3 class="title1">안녕하세요</h3>
+								<div class="intro-circle-pic-area">
+									<img src="../assets/images/mh@2x.png" alt="" />
+								</div>
+								<div class="change-area">
+									<span class="text-area"><span class="change-text"></span>조민혁 입니다.</span>
+									<div class="percent-area">
+										<div class="percent-bar"></div>
+									</div>
+								</div>
+								<div class="tab-area mt6">
+									<ul class="tab-header-area">
+										<li class="item on">
+											<a class="tab-btn tab1" href="#">퍼블리싱1</a>
+										</li>
+										<li class="item">
+											<a class="tab-btn" href="#">etc2</a>
+										</li>
+										<li class="item">
+											<a class="tab-btn" href="#">etc3</a>
+										</li>
+										<li class="item">
+											<a class="tab-btn" href="#">etc4</a>
+										</li>
+									</ul>
+									<ul class="tab-body-area">
+										<li class="tab-content-item on" tabindex="0">
+											<div class="tab-content">
+												<h3 class="title1">ETC1</h3>
+												<div class="desc-list">
+													<dl class="item">
+														<dt class="desc-list-title">재능기부</dt>
+														<dd class="desc-list-desc">
+															다수의 퍼블리싱 입문자 및 취업준비생, 현직
+															개발자 등에게 무료교육을 지속적으로 해오고
+															있습니다. (마크업/레이아웃/git/scss 등)
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">
+															UX/UI 디자이너 양성
+														</dt>
+														<dd class="desc-list-desc">
+															UXUI디자이너를 양성한 경험이 있습니다.(1명)
+															<br />컴포넌트에 대한 개념, 디바이스별 대응,
+															스타일가이드와 디스크립션, figma, 와이어프레임
+															및 프로토타이핑 등을 교육하였습니다. 특히
+															컴포넌트와 스타일가이드 디스크립션 등에 역점을
+															두었습니다.
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">퍼블리셔 양성</dt>
+														<dd class="desc-list-desc">
+															직업군인 전역한 친구에게 퍼블리싱을 가르치고
+															있습니다.
+															<br />
+															커리큘럼 : git주소 :
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">
+															디자이너 기술 블로그 프로젝트
+														</dt>
+														<dd class="desc-list-desc">
+															디자이너를 위한 기술블로그 콘텐츠를 기획 및
+															검수하였습니다. (아래 블로그는 제가 취업준비
+															시킨 ux/ui 신입 디자이너의 블로그입니다.)
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="tab-content-item" tabindex="0">
+											<div class="tab-content">
+												<h3 class="title1">퍼블리싱2</h3>
+												<div class="desc-list">
+													<dl class="item">
+														<dt class="desc-list-title">컴포넌트2</dt>
+														<dd class="desc-list-desc">
+															공통 컴포넌트 정의는 현대 웹의 중요한 지향점
+															중 하나라고 볼 수 있습니다.<br />
+															재사용성/생산성에 직결되기 때문입니다.<br />디자인
+															규격에 따라 재사용성 높은 공통 컴포넌트를
+															정의하고 구현합니다.
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">웹접근성</dt>
+														<dd class="desc-list-desc">
+															웹접근성 프로젝트에서 PA로 다수 참여하였으며
+															웹 접근성 프로젝트 수행이 가능합니다.<br />
+															(신입사원을 대상으로 웹접근성 교육 실시한 경험
+															있음)
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">커뮤니케이션</dt>
+														<dd class="desc-list-desc">
+															한 걸음 뒤에 서서 배려와 존중이 있는 대화를
+															하기 위해 노력합니다.<br />
+															밝고 긍정적으로 커뮤니케이션 합니다.<br />
+															디스크립션은 명료하고 시원하게 달기 위해
+															노력합니다.<br />
+															열띤 의견개진이 필요한 상황에서는 뜨겁게
+															이야기 합니다.
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">직무능력개발</dt>
+														<dd class="desc-list-desc">
+															꾸준하고 지속적인 자기개발 덕후로 정평이
+															나있습니다. (인프런 vvip)
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="tab-content-item" tabindex="0">
+											<div class="tab-content">
+												<h3 class="title1">퍼블리싱3</h3>
+												<div class="desc-list">
+													<dl class="item">
+														<dt class="desc-list-title">컴포넌트 3</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																공통 컴포넌트 정의는 현대 웹의 중요한 지향점
+																중 하나라고 볼 수 있습니다.<br />
+																재사용성/생산성에 직결되기 때문입니다.<br />디자인
+																규격에 따라 재사용성 높은 공통 컴포넌트를
+																정의하고 구현합니다.
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">웹접근성</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																웹접근성 프로젝트에서 PA로 다수 참여하였으며
+																웹 접근성 프로젝트 수행이 가능합니다.<br />
+																(신입사원을 대상으로 웹접근성 교육 실시한 경험
+																있음)
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">커뮤니케이션</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																한 걸음 뒤에 서서 배려와 존중이 있는 대화를
+																하기 위해 노력합니다.<br />
+																밝고 긍정적으로 커뮤니케이션 합니다.<br />
+																디스크립션은 명료하고 시원하게 달기 위해
+																노력합니다.<br />
+																열띤 의견개진이 필요한 상황에서는 뜨겁게
+																이야기 합니다.
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">직무능력개발</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																꾸준하고 지속적인 자기개발 덕후로 정평이
+																나있습니다. (인프런 vvip)
+															</a>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+										<li class="tab-content-item" tabindex="0">
+											<div class="tab-content">
+												<h3 class="title1">퍼블리싱4</h3>
+												<div class="desc-list">
+													<dl class="item">
+														<dt class="desc-list-title">컴포넌트4</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																공통 컴포넌트 정의는 현대 웹의 중요한 지향점
+																중 하나라고 볼 수 있습니다.<br />
+																재사용성/생산성에 직결되기 때문입니다.<br />디자인
+																규격에 따라 재사용성 높은 공통 컴포넌트를
+																정의하고 구현합니다.
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">웹접근성</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																웹접근성 프로젝트에서 PA로 다수 참여하였으며
+																웹 접근성 프로젝트 수행이 가능합니다.<br />
+																(신입사원을 대상으로 웹접근성 교육 실시한 경험
+																있음)
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">커뮤니케이션</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																한 걸음 뒤에 서서 배려와 존중이 있는 대화를
+																하기 위해 노력합니다.<br />
+																밝고 긍정적으로 커뮤니케이션 합니다.<br />
+																디스크립션은 명료하고 시원하게 달기 위해
+																노력합니다.<br />
+																열띤 의견개진이 필요한 상황에서는 뜨겁게
+																이야기 합니다.
+															</a>
+														</dd>
+													</dl>
+													<dl class="item">
+														<dt class="desc-list-title">직무능력개발</dt>
+														<dd class="desc-list-desc">
+															<a href="#">
+																꾸준하고 지속적인 자기개발 덕후로 정평이
+																나있습니다. (인프런 vvip)
+															</a>
+														</dd>
+													</dl>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<footer include-html="./footer/footer.html"></footer>
+	</div>
+</body>
+<script>
+	function includeHTML() {
+		var z, i, elmnt, file, xhttp;
+		z = document.getElementsByTagName("*");
+		for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			file = elmnt.getAttribute("include-html");
+			if (file) {
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						elmnt.innerHTML = this.responseText;
+						elmnt.removeAttribute("include-html");
+						includeHTML();
+					}
+				};
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				return;
+			}
+		}
+	}
+	includeHTML();
+</script>
+<script src="../assets/js/common.js"></script>
+<script src="../assets/js/basic.js"></script>
+<script src="../assets/js/intro.js"></script>
+<script></script>
+
 </html>
