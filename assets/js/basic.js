@@ -23,14 +23,15 @@ const getSameIndexEl = (el, iter) => {
 const findSibilings = (el, option) => {
 	if (option == "other") {
 		//옵션 체크한경우
-		const res = [...el.children];
+		const res = [...el.parentElement.children];
 		//반환할 요소(자기형제들)
-		res.splice([...el.children].indexOf(el), 1);
+		res.splice([...el.parentElement.children].indexOf(el), 1);
 		//res에서 자기자신의 인덱스 구해서 빼버림
 		return res;
 		//자기자신 빼진 형제들을 반환
 	}
-	return el.parentElement.children;
+	console.log(el.parentElement.children)
+	return [...el.parentElement.children];
 	//형제들을 반환
 };
 

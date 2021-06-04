@@ -1,180 +1,147 @@
 setTimeout(() => {
 	console.log("3초지남");
 
+
+
+
 	(() => {
-		let currentEl;
-		let nextEl;
-		let prevEl;
-		let index;
-		let flagIndex = 0;
-		const tab = "tab-area"
-		const seperator = ["tab-btn", "tab-content-item"]
-		const focusableElementsString =
-			'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-		let tabBtn;
-		let tabContent;
-		let focusIncontents = false;
-		let focusContentsToBtn = false;
-		window.addEventListener('keydown', (e) => {
-			const keyName = e.key;
-			let tabEl;
-			let btnEls;
-			let contentEls; {
-				const focusableElement = closest(e.target, seperator[1]).querySelectorAll(focusableElementsString);
-				if (keyName == "Tab" && !e.shiftKey && nextEl) {
-					console.log('텝이면서 넥스트있을떄')
-					console.log(nextEl)
-
-					if (focusIncontents) {
-						console.log("focusIncontents")
-					}
-					if (!focusIncontents) {
-						console.log("!focusIncontents")
-						e.preventDefault();
-						nextEl.focus();
-						if (focusContentsToBtn) {
-							tabEl = closest(e.target, tab)
-							btnEls = tabEl.querySelectorAll(`.${seperator[0]}`);
-							contentEls = tabEl.querySelectorAll(`.${seperator[1]}`);
-							btnEls.forEach((el) => {
-								closest(el, "item").classList.remove('on')
-							})
-							contentEls.forEach((el) => {
-								el.classList.remove('on')
-							})
-							closest(btnEls[flagIndex], "item").classList.add('on')
-							contentEls[flagIndex].classList.add('on');
-							nextEl = contentEls[flagIndex];
-							focusIncontents = false;
-							focusContentsToBtn = false;
-						}
-					}
-				}
-				if (e.shiftKey && keyName == "Tab") {
-					const activeEl = document.activeElement;
-					if (classCheckBring(activeEl, seperator)) {
-						console.log('dddddddddddd')
-
-					}
-
-					if (prevEl) {
-						e.preventDefault();
-						prevEl.focus();
-					}
-					//이 EL이 이중에 클레스를 가지고 있다면
-
-				}
+		if (qs('.tab-area')) {
+			//초기화
+			const init = () => {
+				// 시각적으로 활성화 표기를 위한 클래스 추가
+				qs('.tab:first-of-type, .tabpanel:first-of-type', "array").forEach((el) => {
+					el.classList.add("active");
+					el.setAttribute("tabindex", "0")
+				});
+				// 의미적으로 활성화 표기를 위해 true로 설정된 aria-selected 속성 추가
+				qs(".tab:first-of-type", "array").forEach((el) => {
+					el.setAttribute("area-selected", "true")
+				});
 			}
+			init()
 
+			//탭 초점이동 (방향키)
+			qs('.tab', "array").forEach((el) => {
+				el.addEventListener('keydown', (e) => {
+					e.preventDefault ? e.preventDefault() : e.returnValue = false;
+					const target = e.target;
+					const keyCode = e.keyCode;
+					console.log(keyCode)
 
-		})
-		window.addEventListener('keyup', (e) => {
-			const keyName = e.key;
-			if (keyName == "Tab" && !e.shiftKey) {
-				currentEl = e.target;
-				const tabEl = closest(e.target, tab)
-				const currentClass = classCheckBring(currentEl, seperator);
-
-				if (currentClass) {
-					switch (currentClass) {
-						case "tab-btn": {
-
-							//인덱스가 0이 아니고, 인덱스가 있다면 다음 버튼으로(기존 버튼 초기화)
-
-
-
-							const elIndexNumber = getIndexNumber(currentEl, "up", "item");
-							const contentEl = closest(currentEl, tab).querySelectorAll('.tab-content-item')
-							nextEl = contentEl[elIndexNumber]
-
-
-						}
-						break;
-					case "tab-content-item": {
-						const focusableElement = closest(e.target, seperator[1]).querySelectorAll(focusableElementsString);
-						console.log(focusableElement)
-						if (focusableElement.length == 0) {
-
-							console.log("focusIncontents없음")
-							flagIndex++;
-							nextEl = tabEl.querySelectorAll(`.${seperator[0]}`)[flagIndex]
-							focusIncontents = false;
-							focusContentsToBtn = true
-
-						} else {
-							console.log('tab-content스위치')
-							const elIndexNumber = getIndexNumber(currentEl, "up", "tab-content-item");
-							const contentEl = closest(currentEl, tab).querySelectorAll('.tab-btn')
-							flagIndex = elIndexNumber;
-							console.log(elIndexNumber);
-							if (contentEl[flagIndex]) {
-								nextEl = contentEl[flagIndex]
+					switch (keyCode) {
+						//leftArrow
+						case 37:
+							if (target.previousElementSibling) {
+								target.setAttribute("tabindex", "-1");
+								target.previousElementSibling.setAttribute("tabindex", "0");
+								target.previousElementSibling.focus();
+							} else {
+								//초점이 첫번째라면 마지막 탭으로 초점이동
+								target.setAttribute("tabindex", "-1");
+								findSibilings(target)[findSibilings(target).length - 1].setAttribute("tabindex", "0");
+								findSibilings(target)[findSibilings(target).length - 1].focus()
 							}
-							focusIncontents = true;
-							focusContentsToBtn = true;
+							break;
+
+
+							//rightArrow
+						case 39:
+							if (target.nextElementSibling) {
+								target.setAttribute("tabindex", "-1");
+								target.nextElementSibling.setAttribute("tabindex", "0");
+								target.nextElementSibling.focus();
+							} else {
+								//초점이 첫번째라면 마지막 탭으로 초점이동
+								target.setAttribute("tabindex", "-1");
+								findSibilings(target)[0].setAttribute("tabindex", "0");
+								findSibilings(target)[0].focus()
+							}
+							break;
+							//Sapce
+						case 32:
+							//Enter
+						case 13:
+
+							// 기존 탭 비활성화
+							findSibilings(target).forEach((el) => {
+								el.classList.remove("active");
+								el.setAttribute("aria-selected", "false");
+							});
+							//선택된탭 활성화
+							target.classList.add('active');
+							target.setAttribute("aria-selected", "true");
+
+
+							//기존 탭 패널 비활성화
+							findSibilings(qs(`#${target.getAttribute("aria-controls")}`)).forEach((el) => {
+								el.setAttribute("tabindex", "-1");
+								el.classList.remove("active");
+							});
+							//연관된 탭 패널 활성화
+
+							qs(`#${target.getAttribute("aria-controls")}`).setAttribute("tabindex", "0");
+							qs(`#${target.getAttribute("aria-controls")}`).classList.add("active");
+							break;
+					}
+
+
+				})
+			})
+
+			qs('.tablist', "array").forEach((el) => {
+				el.addEventListener("keydown", (e) => {
+					const target = e.target;
+					const keyCode = e.keyCode;
+					console.log(keyCode)
+					if (target.classList.contains("active")) {
+
+						//tab키 눌렀을 때 (시프트 탭 제외)
+						if (!e.shiftKey && keyCode === 9) {
+							e.preventDefault ? e.preventDefault() : e.returnValue = false;
+							findSibilings(qs(`#${target.getAttribute("aria-controls")}`)).forEach((el) => {
+								if (el.classList.contains('tabpanel')) {
+									el.setAttribute("tabindex", "-1");
+									el.classList.remove("active")
+								}
+							});
+							qs(`#${target.getAttribute("aria-controls")}`).setAttribute("tabindex", "0");
+							qs(`#${target.getAttribute("aria-controls")}`).classList.add("active");
+							qs(`#${target.getAttribute("aria-controls")}`).focus();
+
 						}
-
-						break;
 					}
+				})
+			})
 
-					default:
-						break;
-					}
-				} else {
-					const focusableElement = closest(e.target, seperator[1]).querySelectorAll(focusableElementsString);
-					if (focusIncontents) {
-						console.log('focusIncontents')
-						console.log(focusableElement)
-						if (e.target == focusableElement[focusableElement.length - 1]) {
-							console.log('91이프문통과')
-							//지금 있는 인덱스에서 다음인덱스로
-							focusIncontents = false;
-							flagIndex++;
-							console.log(flagIndex)
-							nextEl = tabEl.querySelectorAll(`.${seperator[0]}`)[flagIndex]
-							console.log(nextEl)
+			qs('.tab', "array").forEach((el) => {
+				el.addEventListener('mousedown', (e) => {
+					const target = e.target;
+					//기존 탭 비활성화
+					findSibilings(target).forEach((el) => {
+						el.classList.remove("active");
+						el.setAttribute("tabindex", "-1")
+						el.setAttribute("aria-selected", "false")
+					});
+					//선택된 탭 활성화
+					target.classList.add("active");
+					target.setAttribute("tabindex", "0")
+					target.setAttribute("aria-selected", "true")
+					target.focus();
+
+					//기존탭 비활성화
+					findSibilings(qs(`#${target.getAttribute("aria-controls")}`)).forEach((el) => {
+						if (el.classList.contains('tabpanel')) {
+							el.setAttribute("tabindex", "-1");
+							el.classList.remove("active");
 						}
-					}
-					console.log("focusableElement")
-					console.log(focusableElement)
-				}
-			}
+					})
+					//연관된 탭 패널 활성화
 
-			if (e.shiftKey) {
-				if (keyName == "Tab") {
-					currentEl = e.target;
-					const tabEl = closest(e.target, tab)
-					const currentClass = classCheckBring(currentEl, seperator);
-					switch (currentClass) {
-						case seperator[0]:
-							//btn
-							console.log('케이스문', seperator[0])
-							prevEl = tabEl.querySelectorAll(`.${seperator[1]}`)[flagIndex - 1];
-							// prevEl = findSibilings(closest(currentEl, 'item'))[flagIndex - 1];
-
-							break;
-						case seperator[1]:
-							//content
-							console.log('케이스문', seperator[1])
-
-							break;
-						default:
-							break;
-					}
-					console.log('바로위가 내가찍은거')
-
-
-					if (prevEl) {
-						e.preventDefault();
-						prevEl.focus();
-					}
-					//이 EL이 이중에 클레스를 가지고 있다면
-
-				}
-			}
-
-
-		})
+					qs(`#${target.getAttribute("aria-controls")}`).setAttribute("tabindex", "0");
+					qs(`#${target.getAttribute("aria-controls")}`).classList.add("active")
+				});
+			});
+		}
 	})();
 
 
@@ -192,31 +159,6 @@ setTimeout(() => {
 
 
 
-
-
-
-
-	if (qs(".tab-area")) {
-		const tabs = qs(".tab-area", "array");
-		tabs.forEach((tab) => {
-			const tabBtn = tab.querySelectorAll(".tab-header-area .item");
-			const tabContent = tab.querySelectorAll(
-				".tab-body-area .tab-content-item"
-			);
-			tabBtn.forEach((btn) => {
-				btn.addEventListener("click", () => {
-					tabBtn.forEach((button) => {
-						button.classList.remove("on");
-					});
-					tabContent.forEach((content) => {
-						content.classList.remove("on");
-					});
-					tabBtn[[...tabBtn].indexOf(btn)].classList.add("on");
-					tabContent[[...tabBtn].indexOf(btn)].classList.add("on");
-				});
-			});
-		});
-	}
 	// 탭
 	// if (qs(".tab-header-area")) {
 	//   const tab = qs(".tab-header-area", "array");
@@ -427,6 +369,8 @@ setTimeout(() => {
 						this.imgInfo.img.onload = () => {
 							this.imgInfo.imgW = this.imgInfo.img.width;
 							this.imgInfo.imgH = this.imgInfo.img.height;
+							qs('.main').style.backgroundSize = `${this.imgInfo.imgW}px ${this.imgInfo.imgH}px`
+							console.log(qs('.main'))
 							if (window.innerWidth < this.imgInfo.imgW) {
 								this.values.startPoint =
 									(this.imgInfo.imgW - window.innerWidth) / 2;
@@ -439,37 +383,57 @@ setTimeout(() => {
 						switch (this.bgFlag) {
 							case "leftVeryFast":
 								if (this.values.currentX <= 0) {
-									this.values.currentX = this.values.currentX + 5;
+
+									if (this.values.currentX + 5 > 0) {
+										this.values.currentX = this.values.currentX + 0;
+									} else {
+										this.values.currentX = this.values.currentX + 5;
+
+									}
 									this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 								}
 								break;
 							case "leftFast":
 								if (this.values.currentX <= 0) {
-									this.values.currentX = this.values.currentX + 3;
+
+									if (this.values.currentX + 3 > 0) {
+										this.values.currentX = this.values.currentX + 0;
+
+									} else {
+										this.values.currentX = this.values.currentX + 3;
+
+									}
 
 									this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 								}
 								break;
 							case "leftSlow":
 								if (this.values.currentX <= 0) {
-									this.values.currentX++;
+
+									if (this.values.currentX + 3 > 0) {
+										this.values.currentX = this.values.currentX + 0;
+									} else {
+										this.values.currentX++;
+									}
+
+
 
 									this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 								}
 								break;
 							case "rightVeryFast":
-								if (this.values.currentX >= -this.imgInfo.imgW) {
+								if (this.values.currentX >= -(this.imgInfo.imgW - window.innerWidth)) {
 									this.values.currentX = this.values.currentX - 5;
 									this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 								}
 								case "rightFast":
-									if (this.values.currentX >= -this.imgInfo.imgW) {
+									if (this.values.currentX >= -(this.imgInfo.imgW - window.innerWidth)) {
 										this.values.currentX = this.values.currentX - 3;
 										this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 									}
 									break;
 								case "rightSlow":
-									if (this.values.currentX >= -this.imgInfo.imgW) {
+									if (this.values.currentX >= -(this.imgInfo.imgW - window.innerWidth)) {
 										this.values.currentX--;
 										this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 									}

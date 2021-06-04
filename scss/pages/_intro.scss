@@ -242,28 +242,20 @@
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  .tab-header-area {
+  .tablist {
     width: 100%;
-    .item {
+    .tab {
       float: left;
       border: 1px solid $gray-400;
       min-width: 200px;
-      a {
-        padding: 10px 16px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      &.on {
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.active {
         background: $primary;
         border: 1px solid $primary;
-        a {
-          color: #fff;
-        }
-        .tab-content {
-          display: block;
-        }
+        color: #fff;
       }
       .tab-content {
         display: none;
@@ -271,7 +263,7 @@
         left: 0;
         top: 60px;
         width: 100%;
-        &.on {
+        &.active {
           display: block;
         }
       }
@@ -280,18 +272,18 @@
 
   .tab-body-area {
     width: 100%;
-    > .tab-content-item {
+    .tabpanel {
       display: none;
-      &.on {
+      &.active {
         display: block;
       }
     }
     // position: absolute;
   }
   @include MtoT {
-    .tab-btn-area {
+    .tablist {
       display: flex;
-      .item {
+      .tab {
         float: none;
         min-width: auto;
       }
