@@ -9,6 +9,8 @@
         flex-wrap: wrap;
         transition: 0.3s;
         padding: 0 40px;
+        transform: scale(1) translateZ(0);
+        backface-visibility: hidden;
         .text-area {
           width: 100%;
           order: 2;
@@ -43,12 +45,12 @@
           order: 4;
           width: 100%;
           display: block;
-          color: rgb(49, 130, 246);
+          color: $primary;
         }
 
         &:hover {
           @include PC {
-            transform: scale(1.02);
+            transform: scale(1.02) translateZ(0);
             strong {
               &::before {
                 content: "";
@@ -107,20 +109,20 @@
         > a {
           padding: 0;
           .text-area {
-            margin-top: 6px;
+            margin-top: 10px;
             .title-area {
               font-size: 16px;
               word-break: keep-all;
             }
             .text {
-              margin-top: 10px;
+              margin: 10px 0;
               font-size: 12px;
               line-height: 14px;
               word-break: keep-all;
             }
           }
           .label-area {
-            margin-top: 6px;
+            margin-top: 0;
             font-size: 12px;
           }
         }
@@ -132,8 +134,8 @@
               position: absolute;
               right: 0;
               top: 0;
-              padding: 4px 10px;
-              background: #3182f6;
+              padding: 2px 8px;
+              background: $primary;
               color: #fff;
               font-size: 12px;
             }

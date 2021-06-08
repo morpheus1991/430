@@ -39,7 +39,9 @@
 						<div class="title-area">
 							<h2>제목</h2>
 						</div>
-						<div class="content"></div>
+						<div class="content">
+							<p class="alpha-z">null</p>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -73,5 +75,20 @@
 </script>
 <script src="../assets/js/basic.js"></script>
 <script src="../assets/js/common.js"></script>
+<script>
+	DeviceOrientationEvent.requestPermission()
+	// qs('.alpha-z').innerText = window.DeviceOrientationEvent;
+	if (window.DeviceMotionEvent) {
+		console.log('실행')
+		qs('.alpha-z').innerText = 'DeviceMotionEvent 실행';
+		window.addEventListener('deviceorientation' || "orientationchange", (e) => {
+			qs('.alpha-z').innerText = 'deviceorientation내부실행';
+			console.log(e)
+			qs('.alpha-z').innerText = e.alpha;
+		}, false)
+	} else {
+		qs('.alpha-z').innerText = '실행안댐';
+	}
+</script>
 
 </html>

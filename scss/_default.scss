@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR",
-    "Noto Sans CJK KR", "NotoSansKR", "malgungothic", "Helvetica Neue", Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: "Noto Sans KR", "Noto Sans CJK KR", "NotoSansKR", "malgungothic",
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
 html,
 body,
@@ -159,6 +158,6 @@ article {
 
 * {
   :focus {
-    outline: 1px solid blue;
+    // outline: 1px solid #0067b329;
   }
 }

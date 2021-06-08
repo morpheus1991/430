@@ -158,8 +158,10 @@
   margin: auto;
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 50px;
+  padding-bottom: 50px;
   position: relative;
+  background: #000;
   .text-area {
     display: flex;
     width: 100%;
@@ -168,6 +170,8 @@
     text-align: center;
     .change-text {
       margin-right: 10px;
+      font-weight: bold;
+      color: $primary;
     }
   }
   .percent-area {
@@ -179,7 +183,19 @@
     .percent-bar {
       width: 50%;
       height: 100%;
-      background: blue;
+      background: $primary;
+    }
+  }
+  @include PC {
+    max-width: 640px;
+  }
+  @include MtoT {
+    padding-bottom: 34px;
+    .text-area {
+      font-size: 12px;
+      .change-text {
+        margin-right: 4px;
+      }
     }
   }
 }
@@ -187,16 +203,19 @@
 .desc-list {
   margin-top: 20px;
   .item {
+    position: relative;
     display: flex;
     padding: 6px 10px;
     justify-content: space-between;
     min-height: 100px;
+    border: 1px solid transparent;
     .desc-list-title {
       width: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid rgb(238, 238, 238);
+      // border: 1px solid $primary;
       padding: 10px;
       word-break: keep-all;
       text-align: center;
@@ -205,23 +224,129 @@
       width: calc(100% - 160px);
       display: flex;
       align-items: center;
+      line-height: 1.35;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        align-items: flex-start;
+        min-height: 60px;
+        & + li {
+          margin-top: 10px;
+        }
+      }
+      .color-label {
+        display: flex;
+        background: $primary !important;
+        padding: 4px 8px;
+        min-width: 124px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        margin-right: 14px;
+        &.html {
+          background: #ff7a559e;
+        }
+        &.css {
+          background: #84c4f3b5;
+        }
+        &.js {
+          background: #ffeb45d1;
+        }
+        &.git {
+          background: #dc4a24b8;
+        }
+        &.vscode {
+          background: #9ad4ff;
+        }
+        &.sourcetree {
+          background: #9ad4ff;
+        }
+        &.figma {
+          background: #ff7855d1;
+        }
+        .text {
+          float: left;
+        }
+      }
+      .full {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 12px;
+        .link-btn {
+          display: flex;
+          padding: 4px 10px;
+          background: $primary;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          & + .link-btn {
+            margin-left: 8px;
+          }
+          &:hover {
+            background: mix(#000, $primary, 10%);
+          }
+        }
+      }
+    }
+    &:hover {
+      @include PC {
+        border: 1px solid $primary;
+        .desc-list-title {
+          border: 1px solid transparent;
+        }
+      }
     }
   }
   @include MtoT {
     .item {
       flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
       .desc-list-title {
+        border: 1px solid transparent;
+        line-height: 1.4;
+        font-weight: bold;
         & + .desc-list-desc {
-          margin-top: 20px;
+          margin-top: 0;
         }
-        width: 100%;
+        // width: 100%;
       }
       .desc-list-desc {
         width: 100%;
+        padding-bottom: 14px;
+        .full {
+          justify-content: center;
+          &.item2ea {
+            .link-btn {
+              width: 50%;
+            }
+          }
+          .link-btn {
+            font-size: 12px;
+          }
+        }
       }
 
       & + .item {
         margin-top: 20px;
+      }
+      &:nth-child(odd) {
+        position: relative;
+        background: #dae7fd;
+        z-index: 100;
+        &::after {
+          content: "";
+          width: calc(100% + 40px);
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          position: absolute;
+          left: 0;
+          background: #dae7fd;
+          transform: translateX(-20px);
+          z-index: -1;
+        }
       }
     }
   }
@@ -231,10 +356,18 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+  @include PC {
+    img {
+      max-width: 640px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include MtoT {
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -244,7 +377,14 @@
   flex-wrap: wrap;
   .tablist {
     width: 100%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    display: flex;
     .tab {
+      flex-grow: 1;
+      max-width: 50%;
       float: left;
       border: 1px solid $gray-400;
       min-width: 200px;
@@ -252,10 +392,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      &:hover {
+        background: mix(#000, #fff, 5%);
+      }
       &.active {
         background: $primary;
         border: 1px solid $primary;
         color: #fff;
+        &:hover {
+          background: mix(#000, $primary, 10%);
+        }
       }
       .tab-content {
         display: none;
@@ -268,12 +415,23 @@
         }
       }
     }
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% + 40px);
+      left: -20px;
+      top: 0;
+      background: #fff;
+      height: 38px;
+      z-index: -1;
+    }
   }
 
   .tab-body-area {
     width: 100%;
     .tabpanel {
       display: none;
+      padding-top: 40px;
       &.active {
         display: block;
       }

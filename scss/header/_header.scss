@@ -1,5 +1,5 @@
 header {
-  z-index: 11;
+  z-index: 1000;
   $stateBarHeight: 4px;
   .scroll-gauge-area {
     width: 100%;
@@ -15,6 +15,7 @@ header {
   }
   .outer-container {
     border-bottom: 1px solid #f2f2f2;
+    background: #fff;
     &.state-area {
       padding-top: $stateBarHeight;
       height: 40px;
@@ -121,9 +122,10 @@ header {
                   width: 356px;
                   height: 180px;
                   position: relative;
-                  background: url(../../assets/images/mh@2x.png) no-repeat;
+                  background: url(../../assets/images/main-bg.jpg) no-repeat;
                   background-position: center 8px;
-                  background-size: 130px;
+                  background-size: cover;
+                  margin-bottom: 20px;
                 }
                 > .menu-depth-2-container
 								// .menu-depth-2-list
@@ -261,6 +263,7 @@ header {
             height: 32px;
             width: 32px;
             border: 0;
+            left: 8px;
             // display: none;
           }
           .m-gnb-title-area {
@@ -300,10 +303,11 @@ header {
                 display: flex;
                 .menu-depth-1-a {
                   width: 75px;
-                  padding: 15px 8px;
+                  padding: 15px 10px;
                   font-size: 14px;
                   display: block;
                   background: #e6e7ec;
+                  text-align: center;
                 }
                 // .menu-depth-2-container
                 .menu-floating-area {
@@ -325,7 +329,7 @@ header {
                         .menu-depth-2-a {
                           position: relative;
                           display: block;
-                          padding: 15px;
+                          padding: 14px 15px;
                           font-size: 16px;
                         }
                         .menu-depth-3-container {
@@ -334,7 +338,7 @@ header {
                           transition: 1s;
 
                           .menu-depth-3-list {
-                            background: rgb(231, 231, 231);
+                            background: #f0fffc;
                             .menu-depth-3 {
                               > a {
                                 display: block;
@@ -396,6 +400,9 @@ header {
                     display: flex;
                     flex-wrap: wrap;
                   }
+                }
+                & + .menu-depth-1 {
+                  margin-top: 4px;
                 }
               }
             }

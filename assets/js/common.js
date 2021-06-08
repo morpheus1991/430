@@ -1,5 +1,4 @@
 setTimeout(() => {
-	console.log("3초지남");
 
 
 
@@ -26,7 +25,7 @@ setTimeout(() => {
 					e.preventDefault ? e.preventDefault() : e.returnValue = false;
 					const target = e.target;
 					const keyCode = e.keyCode;
-					console.log(keyCode)
+
 
 					switch (keyCode) {
 						//leftArrow
@@ -92,7 +91,7 @@ setTimeout(() => {
 				el.addEventListener("keydown", (e) => {
 					const target = e.target;
 					const keyCode = e.keyCode;
-					console.log(keyCode)
+
 					if (target.classList.contains("active")) {
 
 						//tab키 눌렀을 때 (시프트 탭 제외)
@@ -170,7 +169,7 @@ setTimeout(() => {
 	//   qs(".tab-header-area .item", "array").forEach((tabBtn) => {
 	//     tabBtn.addEventListener("click", (e) => {
 	//       qs(".tab-header-area .item").forEach((item) => {
-	//         console.log([...qs(".tab-header-area .item", "array")].indexOf(item));
+	;
 
 	//         item.classList.remove("on");
 	//       });
@@ -184,7 +183,7 @@ setTimeout(() => {
 		var target = qs(".menu-depth-1", "array");
 		for (var i = 0; i < target.length; i++) {
 			if (target[i].querySelector(".menu-depth-2-container")) {
-				console.log(target[i]);
+
 				target[i].classList.add("has-child");
 			}
 		}
@@ -239,13 +238,14 @@ setTimeout(() => {
 		var mGnb = qs(".m-gnb-inner");
 		mGnb.innerHTML = target.innerHTML;
 		var target2 = qs(".m-gnb .menu-depth-2-container .has-child", "array");
-		console.log(target2);
+
 		for (var j = 0; j < target2.length; j++) {
-			console.log(target2[j]);
+
 			if (target2[j].querySelector(".menu-depth-3-container")) {
 				target2[j].querySelector("a").setAttribute("href", "#");
 			}
 		}
+
 	})();
 	//모바일 햄버거메뉴 토글 / 햄버거 메뉴 닫기
 	(function () {
@@ -284,6 +284,9 @@ setTimeout(() => {
 				}
 			});
 		}
+		if (gnbMenuDepth1) {
+			gnbMenuDepth1[0].classList.add("on")
+		}
 	})();
 	//lnb open&close 모듈 (.wrapper.lnb-less가 lnb붙이지 않음.)
 	(function () {
@@ -292,11 +295,12 @@ setTimeout(() => {
 			var target = qs(".gnb-area .menu-depth-1.select .menu-depth-2-container");
 			if (target) {
 				lnbNav.append(target.cloneNode(true));
-				console.log(target);
+
 
 				var clickTarget = qs(".lnb-area .menu-depth-2-a");
 				for (let i = 0; i < clickTarget.length; i++) {
 					clickTarget[i].addEventListener("click", (e) => {
+						e.preventDefault();
 						var tempEl = closest(e.target, "menu-depth-2");
 						if (tempEl.classList.contains("on")) {
 							tempEl.classList.remove("on");
@@ -308,12 +312,12 @@ setTimeout(() => {
 						tempEl.classList.add("on");
 					});
 				}
-				console.log(clickTarget);
+
 			}
 			var target2 = qs(".lnb-nav .menu-depth-2-container .has-child", "array");
-			console.log(target2);
+
 			for (var j = 0; j < target2.length; j++) {
-				console.log(target2[j]);
+
 				if (target2[j].querySelector(".menu-depth-3-container")) {
 					target2[j].querySelector("a").setAttribute("href", "#");
 				}
@@ -366,18 +370,22 @@ setTimeout(() => {
 					this.bgFlag = null;
 
 					this.onloadCheck = () => {
+
 						this.imgInfo.img.onload = () => {
 							this.imgInfo.imgW = this.imgInfo.img.width;
 							this.imgInfo.imgH = this.imgInfo.img.height;
 							qs('.main').style.backgroundSize = `${this.imgInfo.imgW}px ${this.imgInfo.imgH}px`
-							console.log(qs('.main'))
+
 							if (window.innerWidth < this.imgInfo.imgW) {
 								this.values.startPoint =
 									(this.imgInfo.imgW - window.innerWidth) / 2;
 								this.values.currentX = -this.values.startPoint;
 								this.elInfo.el.style.backgroundPosition = `${this.values.currentX}px`;
 							}
+							qs('body').classList.add('MoveBgMouseTrackerLoad')
 						};
+
+
 					};
 					this.play = () => {
 						switch (this.bgFlag) {
@@ -515,11 +523,11 @@ setTimeout(() => {
 									currentX <= rightSlowRange[1]
 								) {
 									this.bgFlag = "rightSlow";
-									console.log("rightSlow");
+
 								}
 								if (currentX >= stopRange[0] && currentX <= stopRange[1]) {
 									this.bgFlag = "stopRange";
-									console.log("stopRange");
+
 								}
 							};
 							window.addEventListener("mousemove", (e) => {
@@ -536,7 +544,7 @@ setTimeout(() => {
 		const testA = new MoveBgMouseTracker({
 			throttle: 1000,
 			el: ".main",
-			src: "../../assets/images/img-main-bg.jpg",
+			src: "../assets/images/img-main-bg.jpg",
 		});
 	})();
 
@@ -557,13 +565,13 @@ setTimeout(() => {
 	// window.addEventListener("keydown", (e) => {
 	// 	const loadClassName = ["tab-btn"]
 	//   const keyName = e.key;
-	//   console.log(focusEl);
+
 	//   focusEl = document.activeElement;
 	//   criteria = focusEl.classList;
-	//   console.log(focusEl.nextElementSibling);
+
 	//   NextEl = hasNext(closest(focusEl, "item"));
 	//   if (keyName == "Tab") {
-	//     console.log("탭키, 프리벤트");
+
 	//     e.preventDefault();
 	//   }
 	// 	focusEl
