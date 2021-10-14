@@ -524,3 +524,10 @@ if (typeof module != 'undefined' && module.exports) {
 } else if (isWindowDefined) {
 	window.Stickyfill = Stickyfill;
 }
+
+
+// 
+
+wholesale.bankInfos.sort((a, b) =>
+                        a.isRepresentativeBankInfo === true ? 0 : b.isRepresentativeBankInfo === false ? -1 : 1
+                    );

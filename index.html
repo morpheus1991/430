@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <h1>MOTION</h1>
+          <div class="top-btn-area">
+            <button class="btn image">image</button>
+            <button class="btn video">video</button>
+            <button class="btn note">note</button>
+            <button class="btn task">task</button>
+          </div>
+        </div>
+      </header>
+      <article>
+        <div class="container">
+          <ul class="list"></ul>
+        </div>
+      </article>
+    </div>
+    <div class="popup-wrapper">
+      <article class="popup-body">
+        <div class="popup-header">
+          <h2 class="popup-title"></h2>
+        </div>
+        <div class="popup-contents">
+          <div class="popup-inner">
+            <div class="input-wrapper">
+              <div class="input-area title">
+                <label for="title">title</label>
+                <input type="text" id="title" />
+              </div>
+              <div class="input-area url">
+                <label for="url">URL</label>
+                <input type="text" id="url" />
+              </div>
+              <div class="input-area body">
+                <label for="text-area">BOdy</label>
+                <textarea name="" id="text-area" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+
+            <button class="btn-add" type="button">add</button>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <button class="btn-close" type="button">close</button>
+        </div>
+      </article>
+    </div>
+
+    <script src="list.js"></script>
+    <script src="dnd.js"></script>
+    <script>
+      const aa = dnd({
+        listselector: ".list",
+        itemclass: ".item",
+        exceptionClass: [".btn-item-delete"],
+      });
+    </script>
+  </body>
+</html>

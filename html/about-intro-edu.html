@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Edu</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -119,29 +119,49 @@
     </div>
   </body>
   <script>
+    const scriptCall = (src) => {
+      console.log(src);
+      const promiseFc = new Promise((resolve, reject) => {
+        src.forEach((item) => {
+          console.log("포이치시작");
+          console.log(item);
+          let script = document.createElement("script");
+          script.src = item;
+          document.body.append(script);
+        });
+        resolve();
+      });
+    };
     function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      z = document.getElementsByTagName("*");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute("include-html");
-        if (file) {
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-              elmnt.innerHTML = this.responseText;
-              elmnt.removeAttribute("include-html");
-              includeHTML();
-            }
-          };
-          xhttp.open("GET", file, true);
-          xhttp.send();
-          return;
+      console.log("로딩시작");
+      const watch = new Promise((resolve, reject) => {
+        var z, i, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4 && this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+                elmnt.removeAttribute("include-html");
+                includeHTML();
+              }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+          }
         }
-      }
+        console.log("로딩완료");
+        resolve("로딩완료");
+      });
+      return watch;
     }
-    includeHTML();
+    const includeHTMLFc = includeHTML();
+    includeHTMLFc.then(() => {
+      scriptCall(["/assets/js/basic.js", "/assets/js/common.js"]);
+    });
   </script>
-  <script src="../assets/js/basic.js"></script>
-  <script src="../assets/js/common.js"></script>
 </html>

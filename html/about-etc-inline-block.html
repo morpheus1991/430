@@ -1,213 +1,276 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline-block</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../assets/images/favicon.ico" />
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
-	<link rel="stylesheet" href="../assets/css/style.css" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet" />
-	<link rel="icon" href="../assets/images/favicon.ico">
-</head>
+  <body>
+    <div class="wrapper">
+      <header include-html="./header/header.html"></header>
+      <div class="content-wrapper">
+        <article id="content">
+          <div class="inner-container width-default relative">
+            <ol class="path">
+              <li>
+                <a href="./index.html">HOME</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro1.html">About</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro1.html">자기소개</a>
+              </li>
+              <li>
+                <a href="./about-intro-intro1.html">소개</a>
+              </li>
+            </ol>
+            <div class="lnb-area">
+              <nav class="lnb-nav"></nav>
+            </div>
+            <div class="content-outer">
+              <div class="title-area">
+                <h2>인라인블럭 레이아웃</h2>
+              </div>
+              <div class="content">
+                <div class="section-area">
+                  <div class="method-info-area pc-only">
+                    <dl class="method-info-inner">
+                      <dt>인라인블럭 수직정렬 시켜보기</dt>
+                      <dd>
+                        <ol class="dot-list">
+                          <li>
+                            수직정렬 시킬 요소의 부모 컨테이너에게 높이와 같은
+                            line-height를 준다.
+                            <br />
+                            (예시 ul높이는 400px이므로 400px 설정)
+                            <br />
+                            이때 line-height는 하위요소에게 상속된다. 줄높이로
+                            넘침현상이 발생 할 수도 있다. <br />
+                            바로 하위레벨에서 line-height를 재지정하여
+                            해결.(예시:li의 line-height를 16px로)
+                          </li>
+                          <li>
+                            수직정렬 시킬 대상에게 vertical-align: middle을
+                            준다.(center 아님 주의)
+                            <br />
+                            (예시 li에게 vertical-align middle)
+                          </li>
+                          <li>
+                            의도치 않은 좌우 여백등이 발생시, 수직정렬 시킬
+                            요소의 부모에게 font-size:0을 준다.
+                            <br />
+                            그러면 해당 부모요소의 하위요소의 텍스트가 없어지는
+                            현상이 발생할 수 있다.
+                            <br />
+                            하위요소에서 다시 font-size 지정하여 텍스트 사라지는
+                            현상 해결하면 된다. <br />(예시 li에게 font-size
+                            16px)
+                          </li>
+                        </ol>
+                      </dd>
+                    </dl>
+                  </div>
+                  <div class="inline-block-section pc-only">
+                    <ul class="inline-block-list">
+                      <li>li</li>
+                      <li>li</li>
+                      <li>li</li>
+                    </ul>
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >ul에의 폰트사이즈를 변경한다면?</strong
+                      >
+                      <div class="container-font-size-btn-area btn-area">
+                        <button type="button" data-value="container-font-0">
+                          font-size:0
+                        </button>
+                        <button type="button" data-value="container-font-16">
+                          font-size:16px
+                        </button>
+                        <button type="button" data-value="container-font-40">
+                          font-size:40px
+                        </button>
+                      </div>
+                    </div>
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >ul에의 line-height를 변경한다면?</strong
+                      >
+                      <div class="container-line-height-btn-area btn-area">
+                        <button
+                          type="button"
+                          data-value="container-lineHeight-auto"
+                        >
+                          line-height:auto
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-lineHeight-400"
+                        >
+                          line-height:400px
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-lineHeight-800"
+                        >
+                          line-height:800px
+                        </button>
+                      </div>
+                    </div>
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >ul에의 text-align를 변경한다면?</strong
+                      >
+                      <div class="container-text-align-btn-area btn-area">
+                        <button
+                          type="button"
+                          data-value="container-text-align-left"
+                        >
+                          text-align:left;
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-text-align-center"
+                        >
+                          text-align:center
+                        </button>
+                        <button
+                          type="button"
+                          data-value="container-text-align-right"
+                        >
+                          text-align:right
+                        </button>
+                      </div>
+                    </div>
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >li의 vertical-align를 변경해보자</strong
+                      >
+                      <div class="container-vertical-align-btn-area btn-area">
+                        <button
+                          type="button"
+                          data-value="item-vertical-align-top"
+                        >
+                          vertical-align-top
+                        </button>
+                        <button
+                          type="button"
+                          data-value="item-vertical-align-middle"
+                        >
+                          vertical-align-middle
+                        </button>
+                        <button
+                          type="button"
+                          data-value="item-vertical-align-bottom"
+                        >
+                          vertical-align-bottom
+                        </button>
+                      </div>
+                    </div>
 
-<body>
-	<div class="wrapper">
-		<header include-html="./header/header.html"></header>
-		<div class="content-wrapper">
-			<article id="content">
-				<div class="inner-container width-default relative">
-					<ol class="path">
-						<li>
-							<a href="./index.html">HOME</a>
-						</li>
-						<li>
-							<a href="./about-intro-intro1.html">About</a>
-						</li>
-						<li>
-							<a href="./about-intro-intro1.html">자기소개</a>
-						</li>
-						<li>
-							<a href="./about-intro-intro1.html">소개</a>
-						</li>
-					</ol>
-					<div class="lnb-area">
-						<nav class="lnb-nav"></nav>
-					</div>
-					<div class="content-outer">
-						<div class="title-area">
-							<h2>인라인블럭 레이아웃</h2>
-						</div>
-						<div class="content">
-							<div class="section-area">
-								<div class="method-info-area pc-only">
-									<dl class="method-info-inner">
-										<dt>인라인블럭 수직정렬 시켜보기</dt>
-										<dd>
-											<ol class="dot-list">
-												<li>
-													수직정렬 시킬 요소의 부모 컨테이너에게 높이와 같은
-													line-height를 준다.
-													<br />
-													(예시 ul높이는 400px이므로 400px 설정)
-													<br />
-													이때 line-height는 하위요소에게 상속된다. 줄높이로
-													넘침현상이 발생 할 수도 있다. <br />
-													바로 하위레벨에서 line-height를 재지정하여
-													해결.(예시:li의 line-height를 16px로)
-												</li>
-												<li>
-													수직정렬 시킬 대상에게 vertical-align: middle을
-													준다.(center 아님 주의)
-													<br />
-													(예시 li에게 vertical-align middle)
-												</li>
-												<li>
-													의도치 않은 좌우 여백등이 발생시, 수직정렬 시킬
-													요소의 부모에게 font-size:0을 준다.
-													<br />
-													그러면 해당 부모요소의 하위요소의 텍스트가 없어지는
-													현상이 발생할 수 있다.
-													<br />
-													하위요소에서 다시 font-size 지정하여 텍스트 사라지는
-													현상 해결하면 된다. <br />(예시 li에게 font-size
-													16px)
-												</li>
-											</ol>
-										</dd>
-									</dl>
-								</div>
-								<div class="inline-block-section pc-only">
-									<ul class="inline-block-list">
-										<li>li</li>
-										<li>li</li>
-										<li>li</li>
-									</ul>
-									<div class="option-controll-area">
-										<strong class="title1">ul에의 폰트사이즈를 변경한다면?</strong>
-										<div class="container-font-size-btn-area btn-area">
-											<button type="button" data-value="container-font-0">
-												font-size:0
-											</button>
-											<button type="button" data-value="container-font-16">
-												font-size:16px
-											</button>
-											<button type="button" data-value="container-font-40">
-												font-size:40px
-											</button>
-										</div>
-									</div>
-									<div class="option-controll-area">
-										<strong class="title1">ul에의 line-height를 변경한다면?</strong>
-										<div class="container-line-height-btn-area btn-area">
-											<button type="button" data-value="container-lineHeight-auto">
-												line-height:auto
-											</button>
-											<button type="button" data-value="container-lineHeight-400">
-												line-height:400px
-											</button>
-											<button type="button" data-value="container-lineHeight-800">
-												line-height:800px
-											</button>
-										</div>
-									</div>
-									<div class="option-controll-area">
-										<strong class="title1">ul에의 text-align를 변경한다면?</strong>
-										<div class="container-text-align-btn-area btn-area">
-											<button type="button" data-value="container-text-align-left">
-												text-align:left;
-											</button>
-											<button type="button" data-value="container-text-align-center">
-												text-align:center
-											</button>
-											<button type="button" data-value="container-text-align-right">
-												text-align:right
-											</button>
-										</div>
-									</div>
-									<div class="option-controll-area">
-										<strong class="title1">li의 vertical-align를 변경해보자</strong>
-										<div class="container-vertical-align-btn-area btn-area">
-											<button type="button" data-value="item-vertical-align-top">
-												vertical-align-top
-											</button>
-											<button type="button" data-value="item-vertical-align-middle">
-												vertical-align-middle
-											</button>
-											<button type="button" data-value="item-vertical-align-bottom">
-												vertical-align-bottom
-											</button>
-										</div>
-									</div>
-
-									<div class="option-controll-area">
-										<strong class="title1">li에의 line-height를 변경한다면?</strong>
-										<div class="item-line-height-btn-area btn-area">
-											<button type="button" data-value="item-lineHeight-16">
-												line-height:16px
-											</button>
-											<button type="button" data-value="item-lineHeight-20">
-												line-height:200px
-											</button>
-											<button type="button" data-value="item-lineHeight-400">
-												line-height:400px
-											</button>
-										</div>
-									</div>
-									<div class="option-controll-area">
-										<strong class="title1">li에의 폰트사이즈를 변경한다면?</strong>
-										<div class="item-font-size-btn-area btn-area">
-											<button type="button" data-value="item-font-0">
-												font-size:0
-											</button>
-											<button type="button" data-value="item-font-16">
-												font-size:16px
-											</button>
-											<button type="button" data-value="item-font-40">
-												font-size:40px
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="m-t">
-									<p>해당 페이지는 pc전용 페이지입니다.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-		</div>
-		<footer include-html="./footer/footer.html"></footer>
-	</div>
-</body>
-<script>
-	function includeHTML() {
-		var z, i, elmnt, file, xhttp;
-		z = document.getElementsByTagName("*");
-		for (i = 0; i < z.length; i++) {
-			elmnt = z[i];
-			file = elmnt.getAttribute("include-html");
-			if (file) {
-				xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function () {
-					if (this.readyState == 4 && this.status == 200) {
-						elmnt.innerHTML = this.responseText;
-						elmnt.removeAttribute("include-html");
-						includeHTML();
-					}
-				};
-				xhttp.open("GET", file, true);
-				xhttp.send();
-				return;
-			}
-		}
-	}
-	includeHTML();
-</script>
-<script src="../assets/js/basic.js"></script>
-<script src="../assets/js/common.js"></script>
-<script src="../assets/js/inline.js"></script>
-
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >li에의 line-height를 변경한다면?</strong
+                      >
+                      <div class="item-line-height-btn-area btn-area">
+                        <button type="button" data-value="item-lineHeight-16">
+                          line-height:16px
+                        </button>
+                        <button type="button" data-value="item-lineHeight-20">
+                          line-height:200px
+                        </button>
+                        <button type="button" data-value="item-lineHeight-400">
+                          line-height:400px
+                        </button>
+                      </div>
+                    </div>
+                    <div class="option-controll-area">
+                      <strong class="title1"
+                        >li에의 폰트사이즈를 변경한다면?</strong
+                      >
+                      <div class="item-font-size-btn-area btn-area">
+                        <button type="button" data-value="item-font-0">
+                          font-size:0
+                        </button>
+                        <button type="button" data-value="item-font-16">
+                          font-size:16px
+                        </button>
+                        <button type="button" data-value="item-font-40">
+                          font-size:40px
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-t">
+                    <p>해당 페이지는 pc전용 페이지입니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <footer include-html="./footer/footer.html"></footer>
+    </div>
+  </body>
+  <script>
+    const scriptCall = (src) => {
+      console.log(src);
+      const promiseFc = new Promise((resolve, reject) => {
+        src.forEach((item) => {
+          console.log("포이치시작");
+          console.log(item);
+          let script = document.createElement("script");
+          script.src = item;
+          document.body.append(script);
+        });
+        resolve();
+      });
+    };
+    function includeHTML() {
+      console.log("로딩시작");
+      const watch = new Promise((resolve, reject) => {
+        var z, i, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4 && this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+                elmnt.removeAttribute("include-html");
+                includeHTML();
+              }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+          }
+        }
+        console.log("로딩완료");
+        resolve("로딩완료");
+      });
+      return watch;
+    }
+    const includeHTMLFc = includeHTML();
+    includeHTMLFc.then(() => {
+      scriptCall([
+        "/assets/js/basic.js",
+        "/assets/js/common.js",
+        "/assets/js/inline.js",
+      ]);
+    });
+  </script>
 </html>

@@ -1,6 +1,5 @@
 const introArray = [
 	"매일 공부중 ",
-	"경력 1년 n개월차 퍼블리셔",
 	"Git 사용 가능",
 	"Scss 사용 가능",
 	"Zeplin, Figma 활용가능 ",
